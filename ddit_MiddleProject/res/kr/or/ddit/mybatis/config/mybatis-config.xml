@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이 문서는 mybatis의 환경 설정에 사용되는 XML문서입니다. -->
+<!DOCTYPE configuration 
+	PUBLIC "-//mybatis.org/DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+	
+<configuration>
+	<!-- DB연결 정보가 저장된 properties파일 정보 설정하기 -->
+	<properties resource="kr/or/ddit/mybatis/config/dbinfo.properties"/>
+	
+	<!-- 기본 설정 셋팅 -->
+	<settings>
+		<!-- 데이터가 null로 전달되었으면 빈 칸으로 인식하지 말고 null로 인식해라... -->
+		<setting name="jdbcTypeForNull" value="NULL"/>
+	</settings>
+	
+	<!-- typeAlais 설정하기 -->
+	<typeAliases>
+		<typeAlias type="kr.or.ddit.board.notice.vo.NoticeBoardVO" alias="noticeboardVO"/>
+		<typeAlias type="kr.or.ddit.board.faq.vo.FaqBoardVO" alias="faqboardVO"/>
+		<typeAlias type="kr.or.ddit.movie.vo.MovieListVO" alias="movieListVO"/>
+		
+		<typeAlias type="kr.or.ddit.theater.vo.TheaterVO" alias="theaterVO"/>
+      	<typeAlias type="kr.or.ddit.moviebook.vo.MovieVO" alias="movieVO"/>
+      	
+      	<typeAlias type="kr.or.ddit.member.vo.MemberVO" alias="memVO" />
+      	
+      	<typeAlias type="kr.or.ddit.board.lost.vo.LostBoardVO" alias="lBoardVO" />
+      	
+      	<typeAlias type="kr.or.ddit.feed.vo.FeedVO" alias="feedVo"/>
+		<typeAlias type="kr.or.ddit.feed.vo.ThumsVO" alias="thumsVo"/>
+		
+		<typeAlias type="kr.or.ddit.board.onetoone.vo.QnAboardVO" alias="boardVO"/>
+		
+		
+		<typeAlias type="kr.or.ddit.rseat.vo.ReserveVO" alias="reserveVO"/>
+     	<typeAlias type="kr.or.ddit.reserveinsert.vo.ReserveInsertVO" alias="reserveinsertVO"/>
+		
+		
+	</typeAliases>
+	
+	<!-- DB연결 설정하기 -->
+	<environments default="oracleEnv">
+		<environment id="oracleEnv">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}"/>
+				<property name="url" value="${url}"/>
+				<property name="username" value="${user}"/>
+				<property name="password" value="${pass}"/>
+			</dataSource>
+		</environment>
+	</environments>
+	<!--  -->
+	<!-- DB에 사용되는 SQL문이 저장된 mapper파일 등록하는 부분 -->
+	<mappers>
+		<mapper resource="kr/or/ddit/mybatis/mappers/noticeboard-mapper.xml"/>
+		<mapper resource="kr/or/ddit/mybatis/mappers/faqboard-mapper.xml"/>
+		<mapper resource="kr/or/ddit/mybatis/mappers/movie-mapper.xml"/>
+	
+		<mapper resource="kr/or/ddit/mybatis/mappers/theater-mapper.xml"/>
+       	<mapper resource="kr/or/ddit/mybatis/mappers/moviebook-mapper.xml"/>
+       	
+       	<mapper resource="kr/or/ddit/mybatis/mappers/member-mapper.xml"/>
+		<mapper resource="kr/or/ddit/mybatis/mappers/lostboard-mapper.xml"/>
+		
+		<mapper resource="kr/or/ddit/mybatis/mappers/feed-mapper.xml"/>
+		<mapper resource="kr/or/ddit/mybatis/mappers/thums-mapper.xml"/>
+		
+		
+		<mapper resource="kr/or/ddit/mybatis/mappers/qnaboard-mapper.xml"/>
+	
+		<mapper resource="kr/or/ddit/mybatis/mappers/reserveseat-mapper.xml"/>
+        <mapper resource="kr/or/ddit/mybatis/mappers/reserveinsert-mapper.xml"/>
+	
+	</mappers>
+
+
+</configuration>	

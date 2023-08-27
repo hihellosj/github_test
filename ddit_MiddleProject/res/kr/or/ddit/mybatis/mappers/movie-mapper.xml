@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Movie">
+	<!-- 영화명, 개봉일 -->
+	<select id="selectMoviemain" resultType="movieListVO">
+		select m_id, m_name, m_age, TO_CHAR(m_opn_date, 'YYYY-MM-DD') AS m_opn_date,
+    		CASE 
+        	WHEN m_res = 0 THEN '0'
+        	ELSE TO_CHAR(m_res, 'fm9990.99')
+    		END AS m_res,
+    		TO_CHAR(m_showing, 'YYYY-MM-DD') m_showing 
+		FROM movie 
+		WHERE m_showing > SYSDATE 
+			ORDER BY m_res DESC
+	</select>
+	
+	<select id="selectMovieId" resultType="movieListVO" parameterType="String">
+		select m_id, m_name, m_story, m_time, m_director, m_age, m_cast, m_translation, 
+		to_char(m_opn_date, 'YYYY.MM.DD') as m_opn_date, m_showing, m_type, m_trailer_url, m_pst
+			from movie 
+		where m_id = #{m_id}
+	</select>
+	
+	<select id="selectMovieUrl" resultType="String" parameterType="String">
+		select m_trailer_url, m_id, m_name
+			from movie
+		where m_id = #{m_id}
+	</select>
+	
+	<insert id="insertMovie" parameterType="movieListVO">
+		insert into movie(m_id, m_name, m_story, m_time, m_director, m_age, m_cast, m_translation,
+		m_opn_date, m_showing, m_type, m_trailer_url, m_pst)
+		values(#{m_id}, #{m_name}, #{m_story}, #{m_time}, #{m_director}, #{m_age}, #{m_cast}, #{m_translation},
+		#{m_opn_date}, #{m_showing}, #{m_type}, #{m_trailer_url}, #{m_pst})
+	</insert>
+	
+	<delete id="deleteMovie" parameterType="String">
+		delete from movie where m_id = #{m_id}
+	</delete>
+	
+	<update id="updateMovie" parameterType="movieListVO">
+		update movie set
+			m_name = #{m_name}, m_story = #{m_story}, m_time = #{m_time}, m_director = #{m_director},
+			m_age = #{m_age}, m_cast = #{m_cast}, m_translation = #{m_translation}, 
+			m_opn_date = #{m_opn_date}, m_showing = #{m_showing}, m_type = #{m_type}, m_trailer_url = #{m_trailer_url}, m_pst = #{m_pst}
+		where m_id = #{m_id}	
+	</update>
+	
+	<select id="getMovie" parameterType="String" resultType="movieListVO">
+    	select * from movie where m_id = #{m_id}
+ 	</select>
+ 	
+</mapper>

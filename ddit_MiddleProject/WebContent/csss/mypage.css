@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+html, body{
+	margin : 0px;
+	padding : 0px;
+	/*color : gray;*/
+}
+body{
+	box-sizing: border-box;
+	margin : 1px;
+	padding : 1px;
+}
+
+#container {
+	display: flex;
+    width: 980px;
+    margin: 0 auto;
+    padding: 20px 0;
+    box-sizing: border-box; /* padding을 포함한 크기 계산 */
+}
+
+#menu{
+	width : 20%;
+	height : 600px;
+	margin : 150px 5px;
+}
+
+#contents{
+	padding-top : 120px;
+	width : 100%;
+	padding-left: 20px;
+}
+
+#menu_bar{
+padding : 0;
+list-style: none;
+}
+
+.mainmenu{
+    width: 180px;
+    height: 35px;
+    color: white;
+    font-size: 16px;
+    background: gray;
+    font-weight: bold;
+    padding-top: 10px;	
+    padding-left : 5px;
+}
+
+.submenu{
+ 	width: 180px;
+    height: 35px;
+    color: gray;
+    font-size: 14px;
+    padding-top: 10px;
+    background: white;
+	text-align: center;
+}
+#container a{
+ 	color: gray;
+    font-size: 14px;
+}
+
+#container a:link { 
+color: gray;
+text-decoration: none;
+}
+#container a:visited { 
+color: gray; 
+}
+

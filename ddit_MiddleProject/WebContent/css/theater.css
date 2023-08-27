@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+
+.inner-wrap {
+    width: 1100px;
+    margin: 200px auto;
+}
+
+.theater-specail-cont p {
+    margin: 0;
+    padding: 0
+}
+
+.theater-specail-cont .section .bg-wrap {
+    padding: 0;
+    background-color: #fff
+}
+
+.theater-specail-cont .section .bg-wrap.bg {
+    padding: 70px 0;
+    background-color: #f2f3f5
+}
+
+.inner-wrap:after, .inner-wrap:before {
+    content: '';
+    display: table;
+}
+
+.theater-specail-cont .tit-theater-special {
+    position: relative;
+    padding: 30px 0;
+    border: 1px solid #d8d9db;
+    text-align: center;
+    background: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-box-slash.png);
+    border-radius: 10px
+    
+}
+
+.theater-specail-cont .cont-theater {
+    padding: 30px 0 0 0;
+}
+
+.theater-specail-cont .tit-theater-special .tit {
+    padding: 0;
+    line-height: 1.1
+}
+
+.theater-specail-cont p {
+    margin: 0;
+    padding: 0;
+}
+
+.theater-specail-cont .tit-theater-special {
+    position: relative;
+    padding: 30px 0;
+    border: 1px solid #d8d9db;
+    text-align: center;
+    background: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-box-slash.png);
+    border-radius: 10px;
+}
+
+.theater-specail-cont .tit-theater-special .tit span {
+    display: block;
+    padding: 0 0 10px 0;
+    font-size: 1.2em
+}
+
+.theater-specail-cont .tit-theater-special .tit span.txt {
+    font-size: 1em;
+    color: #222;
+    padding: 0
+}
+
+.theater-specail-cont .tit-theater-special .tit em {
+    display: block;
+    padding: 0 0 10px 0;
+    font-size: 1.8666em;
+    color: #503396;
+    font-weight: 700
+}
+
+.theater-specail-cont .cont-theater {
+    padding: 30px 0 0 0;
+}
+
+.theater-specail-cont .cont-theater .col-group {
+    overflow: hidden;
+    position: relative;
+}
+
+.theater-specail-cont .cont-theater .col-group.col-1 .col {
+    float: none;
+    width: 100%;
+}
+
+.theater-specail-cont .cont-theater .col-group .col {
+    position: relative;
+    float: left;
+}
+
+.theater-specail-cont .cont-theater .col-group .col .img {
+    font-size: 0;
+    line-height: 0'';
+}
+
+.theater-specail-cont .cont-theater .col-group.col-2 {
+    margin-left: -40px;
+}
+
+.theater-specail-cont .cont-theater .col-group+.col-group {
+    margin-top: 30px;
+}
+
+.theater-specail-cont .cont-theater .col-group {
+    overflow: hidden;
+    position: relative;
+}
+
+.theater-specail-cont .cont-theater .col-group.col-2 .col {
+    float: left;
+    width: 530px;
+    margin: 0 0 0 40px;
+}

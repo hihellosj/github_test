@@ -1,0 +1,252 @@
+@charset "utf-8";
+
+/* common class */
+#sub_m_tit h2 {
+	height: 80px;
+	line-height: 100px;
+	font-weight: 700;
+	font-size: 30px;
+	border-bottom: 1px solid #ddd;
+}
+
+/* join */
+#sub_m_tit.join_menu {
+	width: 100%;
+	height: 210px;
+	padding-top: 106px;
+	background: url("../images/main/bg-detail-db.png") no-repeat center 187px;
+	margin: 0 auto;
+}
+/* #sub_m_tit.join_menu:after{content: ""; display: block; width: 100%; height: 130px; background: url("../images/member/bg_login.jpg") no-repeat center 187px;} */
+#sub_m_tit ul.tablist {
+	width: 720px;
+	height: 130px;
+	margin: 0 auto;
+}
+
+#sub_m_tit ul.tablist li {
+	float: left;
+	width: 360px;
+	height: 130px;
+	line-height: 130px;
+	font-size: 22px;
+	font-weight: 550;
+	color: #fff;
+	text-align: center;
+}
+
+#sub_m_tit ul.tablist li:last-child {
+	float: right;
+}
+
+#sub_m_tit ul.tablist li:hover, 
+#sub_m_tit ul.tablist li:focus,
+#sub_m_tit ul.tablist li.active {
+	color: #700ff0;
+	color: #fff;
+	background: #00ff0000;
+	cursor: pointer;
+}
+
+#join_main div.tabpanel button:hover, 
+#join_main div.tabpanel button:focus,
+#join_main div.tabpanel button:active {
+	color: #fff;
+	background: #700ff0;
+	cursor: pointer;
+}
+
+
+/* join */
+#join_main {
+	padding: 416px 0 90px;
+}
+
+#join_main #tabpanel1 {
+	display: block;
+	width: 1200px;
+	margin: 0 auto;
+}
+
+#join_main #tabpanel1 .join_privacy {
+	width: 900px;
+	margin: 0 auto;
+	padding-bottom: 50px;
+}
+
+#join_main #tabpanel1 .join_privacy:last-child {
+	margin-top: 50px;
+}
+
+#join_main #tabpanel1 .join_privacy>div:first-child {
+	border-left: 5px solid #700ff0;
+}
+
+#join_main #tabpanel1 .join_privacy h3 {
+	padding: 25px 0 25px 50px;
+	color: #700ff0;
+	font-size: 23px;
+	font-weight: 700;
+}
+
+#join_main #tabpanel1 .join_privacy p {
+	height: 200px;
+	line-height: 165%;
+	font-size: 15px;
+	overflow: auto;
+	padding: 0 50px 50px;
+}
+
+#join_main #tabpanel1 .join_privacy .jo_chk {
+	bottom: 0;
+	right: 0;
+}
+
+#join_main #tabpanel1 .join_privacy .jo_chk span {
+	color: #700ff0;
+	font-weight: 500;
+}
+
+#agreeCheck {
+	color: #700ff0;
+    border: 2px solid #700ff0;
+    margin-left: 82%;
+    padding: 4px 13px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#idChkResult{
+	font-size: 15px;
+	color:red;
+}
+
+
+#join_main .jo_form {
+	display: block;
+	width: 950px;
+	margin: 0 auto;
+}
+
+#join tr {
+	font-size: 17px;
+	height: 85px;
+	text-align: left;
+}
+
+#join tr input[type="text"], #join tr input[type="password"] {
+	width: 206px;
+	padding: 3px 0 3px 10px;
+	font-size: 16px;
+}
+
+#join tr select {
+	font-size: 16px;
+	height: 32px;
+	padding: 0 3px 2px 4.5px;
+}
+
+#join .tr4 .jo_f_w {
+	width: 50px;
+}
+
+#join tr th {
+	width: 110px;
+	background: url("../images/main/icon_check.jpg") no-repeat 0 18px;
+}
+
+/*
+#join .tr4 th:nth-child(3), #join .tr5 th:nth-child(3) {
+	background-image: none;
+}
+*/
+
+#join tr th:nth-child(1) {
+	padding-left: 8px;
+	background-position-x: 0px;
+}
+
+
+#join tr+tr th:nth-child(3) {
+	padding-left: 100px;
+	background-position-x: 90px;
+}
+
+
+#join .tr3 td label.jo_fz {
+	font-size: 17px;
+}
+
+#join tr td .jo_fz {
+	font-size: 14px;
+}
+
+#join .tr5 td span {
+	padding: 0 2.5px 0 2.5px;
+}
+
+#join button {
+	color: #700ff0;
+	border: 2px solid #700ff0;
+	margin-left: 15px;
+}
+
+#join button:hover, #join button:focus {
+	color: #fff;
+	background: #700ff0;
+}
+
+#join tr td button {
+	padding: 4px 13px;
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+#join_main .join_member th button {
+	width: 140px;
+	height: 50px;
+	font-size: 18px;
+	font-weight: 700;
+	color: #700ff0;
+	border: 2px solid #700ff0;
+	margin: 70px 20px 0;
+}
+
+#join_main .join_member th button:last-child {
+	border-color: #999;
+	color: #999;
+	font-weight: 400;
+}
+
+#join_main .join_member th button:hover, #join_main .join_member th button:focus
+	{
+	color: #fff;
+	background: #700ff0;
+	border-color: #700ff0;
+	font-weight: 700;
+}
+
+/* join opacity, transition */
+#join button, #join_main .join_member th button {
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+#join_content #join_main .tabpanel {
+	display: none;
+}
+
+#join_content #join_main .tabpanel.active {
+	display: block;
+}
+
+#mailCheck {
+	margin-left: 20px;
+}
+
+
+

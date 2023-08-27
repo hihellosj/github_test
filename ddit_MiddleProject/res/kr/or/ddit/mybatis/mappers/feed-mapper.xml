@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="feed">
+
+	<insert id="insertFeed" parameterType="feedVo">
+		insert into feedboard (fb_no, fb_content, fb_date, user_id, m_id, mi_img, mi_mainimg) values(seqmv.nextval, #{fb_content}, sysdate, #{user_id}, #{m_id}, #{mi_img}, #{m_id})
+	</insert>
+	<!-- 유저 아이디를 어떻게 끌고 오는거지 ? mapper 에서 map을 사용해서? 아니면 다르곳에서 
+	유저아이디를 끌고와서 값을 지정해서 여기다가 넣어주는것인가. 로그인 후에 가능한 것들이기에 . 그냥 갖고있는 값인가 ? 흠..  -->
+	
+	
+	
+	<!-- ****************************************************************** -->
+	
+	<select id="getAllImage" parameterType="feedVo" resultType="feedVo">
+		select * from mv_image where m_id=#{m_id}
+	</select>
+	
+	<select id="getFeedCount" parameterType="feedVo" resultType="feedVo">
+		select * from feedboard order by fb_count
+	</select>
+	
+	<!-- <select id="getFeedRank" parameterType="feedVo" resultType="feedVo">
+		 select f.mi_img, f.mv_no ,count(f.mv_no) countpost 
+		 	 from feedboard f, movie m 
+		 	where f.mv_no=m.mv_no group by f.mv_no, f.mi_img 
+		 order by countpost desc
+	</select> -->
+	
+	<select id="getFeedRank" parameterType="feedVo" resultType="feedVo">
+		 select m.mi_mainimg, f.m_id ,count(f.m_id) countpost 
+			 from feedboard f, mv_image m 
+			where f.m_id=m.m_id and f.mi_img=m.mi_img
+		 group by f.m_id, m.mi_mainimg 
+	     order by countpost desc
+	</select>
+	
+	
+	
+	<select id="getFeedLike" parameterType="feedVo" resultType="feedVo">
+		select * from feedboard order by fb_like
+	</select>
+	
+	<select id="getFeed" parameterType="feedVo" resultType="feedVo">
+		select * from feedboard f, movie m where f.m_id=m.m_id order by fb_date desc
+	</select>
+	
+	<select id="getReservationTicket" parameterType="feedVo" resultType="feedVo">
+		select p.p_no, p.p_ticket_price, p.p_date, info.mvf_yseat, info.mvf_start, info.mvf_end, m.m_name, m.m_id
+     from payment p, reservation r, movie_info info, movie m 
+    where p.p_no=r.p_no 
+      and  r.mvf_no=info.mvf_no 
+      and info.m_id=m.m_id
+      and m.m_id=#{m_id}
+      and p.p_no=#{#p_no}
+	</select>
+	
+	<select id="getSearchFeed" parameterType="String" resultType="feedVo">
+		SELECT *
+		FROM feedboard f, movie m 
+		WHERE f.m_id = m.m_id 
+		and (m.mv_genre LIKE '%'||#{aaa}||'%' 
+		or m.mv_director LIKE '%'||#{aaa}||'%' 
+		or m.mv_cast LIKE '%'||#{aaa}||'%' 
+		or m.mv_name LIKE '%'||#{aaa}||'%')
+		
+		
+	</select>
+	
+	<select id="getSearchFeedList" parameterType="feedVo" resultType="feedVo">
+		SELECT * 
+		FROM feedboard f, movie m 
+		WHERE f.m_id = m.m_id
+		<if test="allPost==''">
+			<if test="mvselect=='mvgenre'.toString()">
+				and m.m_type LIKE '%'||#{searchFeed}||'%' order by f.fb_date desc
+			</if>
+			<if test="mvselect=='mvdirector'">
+				and m.m_director LIKE '%'||#{searchFeed}||'%' order by f.fb_date desc
+			</if>
+			<if test="mvselect=='mvno'">
+				and m.m_name LIKE '%'||#{searchFeed}||'%' order by f.fb_date
+			</if>
+			<if test="mvselect=='mvcast'">
+				and m.m_cast LIKE '%'||#{searchFeed}||'%' order by f.fb_date desc
+			</if>
+			<if test="m_cast!=null">
+				and f.user_id=#{m_cast} order by f.fb_date desc	
+			</if>
+		</if>
+		
+
+	</select>
+	
+	<select id="getMyPostList" parameterType="feedVo" resultType="feedVo">
+		select mv.m_id
+        , (select mi.mi_img from mv_image mi
+            where mi.m_id=mv.m_id
+              and rownum=1) mi_img
+        , (select count(*)
+              from feedboard f 
+             where f.m_id=mv.m_id
+              and m.user_id=f.user_id) post_check
+      from member m , reservation r, movie_info ifo, movie mv
+     where m.user_id=r.user_id
+       and r.mvf_no=ifo.mvf_no
+       and ifo.m_id=mv.m_id
+       and m.user_id=#{user_id}
+		
+	</select>
+	
+	
+	<!-- ****************************************************************** -->
+	<update id="updateFeed" parameterType="feedVo">
+		update feedboard set 
+		fb_content = #{fb_content} where fb_no=#{fb_no}
+	</update>
+	
+	<update id="countFeed" parameterType="feedVo">
+		update feedboard set
+			fb_count=#{fb_count} where fb_no=#{fb_no}
+	
+	</update>
+	
+	
+	
+	<!-- ****************************************************************** -->
+	
+	
+	
+	<delete id="deleteFeed" parameterType="String">
+		delete from feedboard where fb_no = #{fb_no}
+	</delete>
+	
+	<select id="getFee" parameterType="feedVo" resultType="feedVo">
+		select * from feedboard f, movie m where fb_no=#{fb_no} and m.m_id=f.m_id <!-- 이거 join 써도 되나?;  -->
+	</select>
+	
+	
+	<!-- <select id="getFeePerson" parameterType="feedVo" resultType="feedVo">
+		select * from feedboard where fb_no=#{fb_no} and user_id=#{user_id}
+	</select> -->
+	
+	
+	<!-- LIKE -->
+	
+	<!-- 동일 게시글 추천 여부 검색 -->
+    <select id="recCheck" parameterType="map" resultType="int">
+        select count(*) from thumsrec where fb_no = #{fb_no} and user_id = #{user_id}
+    </select>
+	
+	<!-- 게시글 추천 -->
+    <insert id="recUpdate" parameterType="map">
+        insert into thumsrec(fb_no, user_id) values(#{fb_no}, #{user_id})
+    </insert>
+
+    <!-- 게시글 추천 취소 -->
+    <delete id="recDelete" parameterType="map">
+        delete from thumsrec where fb_no = #{fb_no} and user_id = #{user_id}
+    </delete>
+
+    <!-- 게시글 추천수 -->
+    <select id="recCount" parameterType="int" resultType="int">
+        select count(*) from thumsrec where fb_no = #{fb_no}
+    </select>
+	
+	
+	
+	<!-- ****************************************************************** -->
+
+</mapper>

@@ -1,0 +1,564 @@
+@charset "UTF-8";
+body, input, button, select, textarea {
+    font-family: "Noto Sans KR", "Roboto", "dotum", "sans-serif";
+    font-size: 12px;
+    color: #000;
+}
+
+body, textarea {
+    letter-spacing: -0.03em;
+}
+
+div {
+    display: block;
+}
+
+#contents_new23 {
+    margin-top: 90px;
+}
+
+#contents.contents_movie_detail {
+    padding-top: 35px;
+}
+
+#contents {
+    width: 980px;
+    margin: 0 auto;
+    padding: 50px 0 0 0;
+}
+
+.hidden {
+    overflow: hidden;
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+h1, h2, h3, h4, h5, h6, address, caption, em, th {
+    font-style: normal;
+    font-weight: normal;
+}
+
+body, h1, h2, h3, h4, h5, h6, fieldset, ul, ol, dl, dt, dd, p, figure {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+#contents_new23 .detail_top_wrap {
+    min-height: 460px;
+    padding-left: 363px;
+}
+
+.detail_top_wrap {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+#contents_new23 .detail_top_wrap .poster_info {
+    top: -37px;
+    width: 316px;
+    height: 468px;
+}
+
+.detail_top_wrap .poster_info {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+}
+
+#contents_new23 .detail_top_wrap .poster_info img {
+    border-radius: 20px;
+}
+
+.detail_top_wrap .poster_info img {
+    width: 100%;
+}
+
+img {
+    border: none;
+    vertical-align: top;
+}
+
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+#contents_new23 .contents_movie_detail .tit_info {
+    margin-bottom: 10px;
+    padding-top: 10px;
+    font-size: 30px;
+    line-height: 40px;
+    letter-spacing: -2px;
+}
+
+.contents_movie_detail .tit_info {
+    display: block;
+}
+
+.detail_top_wrap .tit_info {
+    margin: -2px 0 15px 0;
+}
+
+.contents_movie_detail .tit_info strong {
+    font-size: 26px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+ul {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.mov_info1 li:first-child {
+    margin-left: -36px;
+    padding-left: 0;
+}
+
+.mov_info1 li {
+    display: inline-block;
+    position: relative;
+    font-size: 18px;
+}
+
+li {
+    text-align: -webkit-match-parent;
+}
+
+.mov_info1 li:first-child:before {
+    width: 0;
+}
+
+.mov_info1 li:before {
+    content: '';
+    display: block;
+    height: 15px;
+    background: #000;
+    opacity: .7;
+    position: absolute;
+    top: 4px;
+    left: 0;
+}
+
+.mov_info1 li .roboto {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.roboto {
+    font-family: "Roboto";
+}
+
+.mov_info1 li {
+    display: inline-block;
+    position: relative;
+    padding-left: 12px;
+    margin-left: 12px;
+    font-size: 18px;
+}
+
+.mov_info1 li:before {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 15px;
+    background: #000;
+    opacity: .7;
+    position: absolute;
+    top: 4px;
+    left: 0;
+}
+
+.icon_clock_black {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(https://www.lottecinema.co.kr/NLCHS/Content/images/icon/icon_clock_black.svg) 0 0 no-repeat;
+    margin-right: 3px;
+    transform: translateY(3px);
+}
+
+.grade_txt {
+    font-weight: bold;
+}
+
+.mov_info2 {
+    margin-top: 50px;
+}
+
+.mov_info2 li {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.btn_trailer {
+    display: inline-block;
+    box-sizing: border-box;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    background-color: #fff;
+    color: #000;
+    font-size: 19px;
+    text-align: center;
+    vertical-align: middle;
+    margin-left: -35px;
+}
+
+button {
+    cursor: pointer;
+}
+
+input, select, button {
+    -webkit-appearance: none;
+}
+
+.btn_trailer .icon_trailerplay {
+    margin-right: 1px;
+}
+
+.icon_trailerplay {
+    display: inline-block;
+    width: 8.5px;
+    height: 13px;
+    background: url(https://www.lottecinema.co.kr/NLCHS/Content/images/icon/icon_trailerplay.svg) 0 0 no-repeat;
+    background-size: 100%;
+}
+
+button > * {
+    position: relative;
+}
+
+.btn_icon_wish {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-width: 88px;
+    height: 40px;
+    line-height: 38px;
+    padding: 0 15px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    background-color: #fff;
+    color: #000;
+    font-size: 19px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* .icon_wishheart { */
+/*     display: inline-block; */
+/*     box-sizing: border-box; */
+/*     position: relative; */
+/*     width: 22px; */
+/*     height: 18px; */
+/*     background: url(https://www.lottecinema.co.kr/NLCHS/Content/images/icon/heart_bdr_black_off.svg) no-repeat 0 0; */
+/*     border: none; */
+/*     font: 0 auto; */
+/*     text-indent: -999999em; */
+/*     새로운 색상을 여기에 지정 */
+/*     color: red; */
+/* } */
+.txtarea_box.movdetailtxt {
+    margin: 30px 0 27px;
+}
+
+.txtarea_box.movdetailtxt .txtarea {
+    overflow-y: scroll;
+    height: 115px;
+    line-height: 1.6;
+    font-size: 19px;
+    border: 0;
+    padding: 0 20px 0 0;
+}
+
+.txtarea {
+    background-color: transparent;
+}
+
+b {
+    font-weight: bold;
+}
+
+#contents_new23 .detail_top_wrap .btn_col1.ty7.rnd.movreservation {
+    width: 323px;
+    height: 60px;
+    line-height: 58px;
+    font-size: 24px;
+    border-radius: 60px;
+}
+
+.btn_col1.ty7, .btn_col2.ty7, .btn_col3.ty7, .btn_col4.ty7, .btn_col5.ty7, .btn_col6.ty7, .btn_col7.ty7, .btn_col8.ty7, .btn_col9.ty7, .btn_col10.ty7 {
+    padding: 0 24px;
+}
+
+a, a:link, a:visited, a:active, a:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn_col1 {
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid #FF243E;
+    color: #ffffff !important;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #700ff0;
+}
+
+.tab_wrap.outer {
+    padding-top: 80px;
+}
+
+.tab_wrap {
+    position: relative;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.tab_wrap.outer.new22 > li > .tab_tit {
+    font-size: 18px;
+}
+
+.tab_wrap.outer > li.active > .tab_tit {
+    border-bottom: 2px solid #111;
+    color: #000;
+}
+
+.tab_wrap.outer > li > .tab_tit {
+    height: 50px;
+    line-height: 50px;
+}
+
+.tab_wrap > li > .tab_tit {
+    border: none;
+}
+
+.tab_wrap > li > .tab_tit {
+    position: absolute;
+    top: 0;
+}
+
+button {
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.tab_wrap > li.active > .tab_con {
+    overflow: inherit;
+    position: relative;
+    width: auto;
+    height: auto;
+}
+
+h4 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.innerfull.gray {
+    background: #F8F8F8;
+}
+
+.innerfull {
+    width: 100%;
+}
+
+.inner980 {
+    width: 980px;
+    margin: 0 auto;
+}
+
+.inner980 .movi_tab_info1 {
+    padding: 30px 0;
+    margin-top: -30px;
+}
+
+.movi_tab_info1 {
+    overflow: hidden;
+    margin: 0px 0 45px 0;
+}
+
+#contents_new23 .tit_info.type1 {
+	margin-top: 10px;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+h5 {
+    display: block;
+    margin-block-start: 1.67em;
+    margin-block-end: 1.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.inner980 .movi_tab_info1 .detail_info2 {
+    color: #191919;
+    font-size: 22px;
+}
+
+.inner980 .movi_tab_info1 .detail_info2 li:first-child {
+    margin-top: 20px;
+    margin-left: -48px;
+}
+
+.inner980 .movi_tab_info1 .detail_info2 li {
+    position: relative;
+    padding-left: 10px;
+    line-height: 32px;
+}
+
+.inner980 .movi_tab_info1 .detail_info2 li:before {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 3px;
+    border-radius: 100%;
+    background: #7c7c7c;
+    position: absolute;
+    top: 15px;
+    margin-left: -50px;
+}
+
+.inner980 .movi_tab_info1 .detail_info2 em {
+    padding-right: 10px;
+    color: #7c7c7c;
+}
+
+.inner980 .movi_tab_info1 .detail_info2 li {
+    position: relative;
+    margin-top: 12px;
+    padding-left: 10px;
+    line-height: 32px;
+    margin-left: -48px;
+}
+
+.gr_15 {
+    color: #dd7430; 
+    
+}
+
+.gr_12 {
+    color: #FFA200; 
+}
+
+.gr_all {
+    color: #229c56;
+}
+
+.txtarea span {
+        white-space: pre-line;
+        word-break: break-all;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: transparent;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close {
+    font-size: 25px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+    float: right;
+    margin-right: -650px; 
+    margin-top: -33px; 
+    clear: both; 
+}
+
+.stillcut_list {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+#contents_new23 .tit_info1.type1 {
+    font-size: 26px;
+    margin-left: 23.5%;
+}
+
+#contents_new23 .tit_info1.type1 em {
+    font-family: "Roboto";
+    font-size: 17px;
+    opacity: .8;
+}
+
+.stillcut_list .gridlist {
+    margin-top: 20px;
+}
+
+.stillcut_list .gridlist .gridlist_item a {
+    display: block;
+    width: 100%;
+}
+
+a, a:link, a:visited, a:active, a:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.updateBtn, .deleteBtn {
+    margin-left: 10px;
+    margin-right: 10px;
+    float: right;
+}

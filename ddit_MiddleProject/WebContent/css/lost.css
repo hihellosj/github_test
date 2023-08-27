@@ -1,0 +1,215 @@
+@charset "utf-8";
+
+.bgPositionY
+{
+    background-position-y : -100px !important;
+}
+button
+{
+    text-align : left;
+    color : inherit;
+    font-weight : inherit;
+}
+
+/* question 시작 */
+.questionTxt
+{
+    font-size : 15px;
+    line-height : 60px;
+    margin-bottom : -40px;
+    padding-left : 42px;
+}
+.questionTxt p + p
+{
+    margin-bottom : 80px;
+}
+.questionTxt strong
+{
+    display : block;
+    font-weight : 500;
+    margin-bottom : 30px;
+}
+#agreementTxt
+{
+    width : 900px;
+    height : 469px;
+    border : 1px solid #aaa;
+    margin-bottom : 20px;
+}
+#agreementTxt p
+{
+    font-size : 15px;
+    line-height : 30px;
+    letter-spacing : -0.4px;
+    padding : 49px 0px 43px 38px;
+}
+.questionTxt2
+{
+    font-size : 15px;
+    line-height : 30px;
+    padding-left : 42px;
+    margin-bottom : 80px;
+}
+.questionTxt2 #radioWrap
+{
+    right : 23px;
+    top : 0px;
+}
+
+
+#lostForm
+{
+    width : 1200px;
+    font-size : 15px;
+    margin-bottom : 80px;
+}
+#lostForm tr
+{
+    border-top : 1px solid #eee;
+    height : 50px;
+}
+.wid140
+{
+    width : 140px;
+}
+.wid410
+{
+    width : 410px;
+}
+.wid310
+{
+    width : 310px;
+}
+#lostForm input[type="text"]
+{
+    background : #f1f1f1;
+}
+#lostForm button
+{
+    font-family : inherit;
+    font-size : 20px;
+    font-weight : 500;
+}
+#lostForm #name
+{
+    width : 130px;
+}
+#lostForm #quesTel
+{
+    width : 130px;
+}
+#lostForm #etc + label
+{
+    margin-right : 200px;
+}
+#lostForm .selAreaWrap
+{
+    display : inline-block;
+}
+#lostForm .selAreaWrap:last-child
+{
+    margin-left : 50px;
+}
+#lostForm .selAreaWrap > button,
+#lostForm .quesType > button
+{
+    width : 140px;
+    height : 40px;
+    line-height : 38px;
+    border : 1px solid #333;
+    padding-left : 12px;
+}
+#lostForm .selAreaWrap > button:hover,
+#lostForm .selAreaWrap > button:focus,
+#lostForm .quesType > button:hover,
+#lostForm .quesType > button:focus
+{
+    -webkit-border-radius : 8px;
+    -moz-border-radius : 8px;
+    border-radius : 8px;
+}
+#lostForm .selAreaWrap .selArea,
+#lostForm .selAreaWrap .selCinema,
+#lostForm .quesType .selType
+{
+    display : none;
+}
+#lostForm .selAreaWrap li,
+#lostForm .quesType .selType li
+{
+    padding-left : 20px;
+    background : #fff;
+    border-bottom : 1px solid #eee;
+    width : 140px;
+    height : 40px;
+    line-height : 38px;
+    -webkit-box-sizing : border-box;
+    -moz-box-sizing : border-box;
+    box-sizing : border-box;
+
+}
+#lostForm .selAreaWrap li button,
+#lostForm .selType li button
+{
+    width : 120px;
+}
+
+#lostForm .selAreaWrap button .triangle:after,
+#lostForm .quesType button .triangle:after
+{
+    content : "";
+    position : absolute;
+    z-index : 200;
+    right : 10px;
+    top : 16px;
+    border-top : 10px solid #aaa;
+    border-left : 8px solid transparent;
+    border-right : 8px solid transparent;
+}
+#lostForm .selAreaWrap button.active .triangle:after,
+#lostForm .quesType.active button .triangle:after
+{
+    -webkit-transform : rotate(180deg);
+    -moz-transform : rotate(180deg);
+    -o-transform : rotate(180deg);
+    -ms-transform : rotate(180deg);
+    transform : rotate(180deg);
+}
+#lostForm .quesType
+{
+    display : inline-block;
+    /* height : 40px;
+    overflow: hidden; */
+}
+#lostForm .quesType .selType li
+{
+    padding-left : 15px;
+}
+#lostForm #quesTit
+{
+    width : 100%;
+}
+#lostForm #quesTarea
+{
+    width : 100%;
+}
+#lostForm input[type="submit"]
+{
+    width : 100px;
+    color : #fff;
+    background : #700ff0;
+}
+/* transition */
+#lostForm .selAreaWrap > button,
+#lostForm .quesType > button,
+#lostForm .selAreaWrap button .triangle:after,
+#lostForm .quesType button .triangle:after
+{
+    -webkit-transition : all 0.5s;
+    -moz-transition : all 0.5s;
+    -o-transition : all 0.5s;
+    transition : all 0.5s;
+}
+
+/* question 종료 */
+

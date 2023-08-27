@@ -1,0 +1,583 @@
+@charset "utf-8";
+
+/* content1 css 시작 */
+div.wid1920.cnt1wrap {
+	padding-top: 106px;
+}
+
+#content1 {
+	width: 100%;
+	height: 960px;
+	position: relative;
+}
+
+#content1 .moviePosterSlider li a {
+	height: 960px;
+	background: no-repeat center top;
+}
+
+#content1 ul li a {
+	display: block;
+	width: 100%;
+	height: 960px;
+	text-indent: -9999px;
+}
+
+#content1 ul li:nth-child(1) a {
+	background-image: url("../images/main/슬라이더_보호자.jpg");
+	background-size: auto 960px; 
+}
+
+#content1 ul li:nth-child(2) a {
+	background-image: url("../images/main/슬라이더_한남자.jpg");
+	background-size: auto 960px; 
+}
+
+/* content1 css 종료 */
+
+/* content2 css 시작 */
+/* 탭버튼 */
+#movieTab {
+	width: 100%;
+	margin: 80px auto;
+}
+
+.tablist {
+	font-size: 30px;
+	font-weight: 600;
+}
+
+.tablist li {
+	width: 50%;
+	height: 88px;
+	line-height: 88px;
+	border-bottom: 2px solid #dddddd;
+	color: #aaaaaa;
+	background: #fff;
+	cursor: pointer;
+}
+
+.tablist li:hover, .tablist li:focus, .tablist li.active {
+	color: #700ff0;
+	cursor: pointer;
+}
+
+.tablist li:after {
+	content: "";
+	display: block;
+	margin: 0 auto;
+	width: 0;
+	height: 2px;
+	background: #700ff0;
+}
+
+.tablist li:hover:after, .tablist li:focus:after, .tablist li.active:after
+	{
+	width: 30%;
+}
+
+/* 탭패널 */
+#movieTab .tabpanel {
+	display: inline-block;
+}
+
+.tabpanel>div a {
+	display: block;
+	width: 180px;
+	height: 40px;
+	line-height: 36px;
+	margin: 48px 0 38px 925px;
+	color: #700ff0;
+	border: 2px solid #700ff0;
+	background: transparent url("../images/common/icon_plus.png") no-repeat
+		14px 50%;
+}
+
+.tabpanel>div a:hover, .tabpanel>div a:focus {
+	color: #fff;
+	background: #700ff0 url("../images/common/icon_plus_hover.png")
+		no-repeat 14px 50%;
+}
+
+.tabpanel ul li {
+	width: 270px;
+	height: 400px;
+	color: #fff;
+}
+
+.tabpanel ul li+li {
+	margin-left: 8px;
+}
+
+.tabpanel ul li div {
+	height: 400px;
+	padding-top: 111px;
+	top: 0;
+	left: 0px;
+	background: rgba(0, 0, 0, 0);
+}
+
+.tabpanel ul li div:hover, .tabpanel ul li div.on {
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.tabpanel ul li div strong {
+	display: block;
+	font-size: 30px;
+	font-weight: 500;
+}
+
+.tabpanel ul li div p {
+	font-size: 13px;
+	font-weight: 100;
+}
+
+.tabpanel ul li div a {
+	display: inline-block;
+	width: 180px;
+	height: 40px;
+	line-height: 36px;
+	border: 2px solid #fff;
+	font-weight: 100;
+	font-size: 18px;
+}
+
+.tabpanel ul li div a:nth-child(3) {
+	margin-top: 57px;
+}
+
+.tabpanel ul li div a:hover, .tabpanel ul li div a:focus, .tabpanel ul li.on div a
+	{
+	color: #333;
+	font-weight: 400;
+	background: #fff;
+}
+
+.tabpanel ul li div a+a {
+	margin-top: 15px;
+}
+
+.tabpanel ul li div strong, .tabpanel ul li div p, .tabpanel ul li div a
+	{
+	-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
+	opacity: 0;
+}
+
+.tabpanel ul li:hover div strong, .tabpanel ul li:hover div p, .tabpanel ul li:hover div a,
+	.tabpanel ul li.on div strong, .tabpanel ul li.on div p, .tabpanel ul li.on div a
+	{
+	-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';
+	opacity: 1;
+}
+
+/* transition */
+.tablist li:hover, .tablist li:focus, .tablist li.active, .tabpanel ul li div,
+	.tabpanel ul li div strong, .tabpanel ul li div p, .tabpanel ul li div a,
+	.tablist li:after, .tabpanel>div a {
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+#movieTab .tabpanel {
+	display: none;
+}
+
+#movieTab .tabpanel.active {
+	display: inline-block;
+}
+/* content2 css 종료 */
+
+/* content3 css 시작 */
+#content3_wrap {
+	background: #f4f4f4;
+}
+
+#content3_wrap:after {
+	content: "";
+	height: 80px;
+	display: block;
+}
+
+#content3 h2 {
+	display: inline-block;
+	font-size: 30px;
+	font-weight: 700;
+	color: #333;
+	margin: 70px 0px;
+	padding: 10px 20px;
+	border-bottom: 3px solid #700ff0;
+	width: 120px;
+}
+
+#content3 #img_wrap {
+	width: 1200px;
+	margin: 0px auto;
+	height: 700px;
+}
+
+#evtBaSliWarp {
+	width: 600px;
+	height: 400px;
+	position: relative;
+}
+
+#content3 #img_wrap>div {
+	float: left;
+}
+
+#content3 #img_wrap div:nth-child(2) {
+	float: right;
+}
+
+#content3 #img_wrap div a {
+	display: inline-block;
+	text-indent: -9999px;
+}
+
+.eventBannerSlider {
+	width: 600px;
+	height: 400px;
+}
+
+#content3 #img_wrap .eventBannerSlider li {
+	width: 600px;
+	height: 400px;
+	background: no-repeat center top;
+}
+
+#content3 #img_wrap .eventBannerSlider li:nth-child(1) a {
+	width: 600px;
+	height: 400px;
+	background-image: url("../images/main/오펜하이머이벤트.jpg");
+}
+
+#content3 #img_wrap .eventBannerSlider li:nth-child(2) a {
+	width: 600px;
+	height: 400px;
+	background-image: url("../images/main/메가로돈이벤트.jpg");
+}
+
+#img_wrap div:nth-child(2) a {
+	width: 600px;
+	height: 700px;
+	background: url("../images/main/엘리멘탈_메인포스터.jpg") no-repeat;
+	background-size: 600px 700px;
+}
+
+#img_wrap div:nth-child(3) a {
+	width: 600px;
+	height: 300px;
+	background: url("../images/main/멤버십카드이벤트.jpg") no-repeat;
+	background-size: 600px 300px;
+}
+/* content3 css 종료 */
+
+/* content4 css 시작 */
+img {
+	vertical-align: top;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+}
+/* common style */
+#content4 {
+	width: 1200px;
+	height: 760px;
+	margin-top: 80px;
+}
+
+#con4_wrap {
+	position: absolute;
+	width: 1200px;
+	height: 600px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#con4_wrap .con4_tit h3 {
+	font-weight: 700;
+	color: #333333;
+	font-size: 30px;
+}
+
+#con4_wrap .con4_tit h3:after {
+	content: "";
+	border-bottom: 3px solid #700ff0;
+	position: absolute;
+	top: 58.4px;
+	left: 50%;
+	margin-left: -100px;
+	width: 200px;
+}
+
+#con4_wrap ul {
+	padding-top: 149px;
+	height: 229px;
+}
+
+#con4_wrap ul li {
+	position: relative;
+	display: inline-block;
+	float: left;
+	width: 370px;
+	height: 228px;
+}
+
+#con4_wrap ul li:nth-child(1) {
+	background: url("../images/main/KT멤버십.png") no-repeat;
+	background-size: 370px 228px;
+}
+
+#con4_wrap ul li:nth-child(2) {
+	background: url("../images/main/삼성카드.png") no-repeat;
+	background-size: 370px 228px;
+}
+
+#con4_wrap ul li:nth-child(3) {
+	background: url("../images/main/신한은행.png") no-repeat;
+	background-size: 370px 228px;
+}
+
+#con4_wrap ul li+li {
+	margin-left: 45px;
+}
+
+#con4_wrap>span {
+	position: absolute;
+	top: 525px;
+	left: 0;
+	text-align: left;
+	color: #555555;
+	line-height: 30px;
+}
+
+#con4_wrap>a {
+	position: absolute;
+	top: 548px;
+	right: 0;
+	width: 180px;
+	height: 40px;
+	border: 2px solid #700ff0;
+	padding: 5px 0px 0px 20px;
+	box-sizing: border-box;
+	background: url("../../asset/images/common/icon_plus.png") no-repeat
+		19px 9px;
+	color: #700ff0;
+	font-size: 16px;
+	transition: all 0.5s;
+}
+
+#con4_wrap>a:hover, #con4_wrap>a:focus {
+	background: #700ff0 url("../../asset/images/common/icon_plus_hover.png") no-repeat 19px 9px;
+	color: #ffffff;
+}
+
+/* .over */
+#con4_wrap .overbox {
+	width: 370px;
+	height: 228px;
+	background: rgba(0, 0, 0, 0);
+	border-radius: 20px;
+}
+
+#con4_wrap .over {
+	position: absolute;
+	top: 25%;
+	left: 15%;
+	width: 255px;
+	height: 87px;
+	text-align: center;
+	color: #ffffff;
+}
+
+#con4_wrap .over span {
+	display: block;
+	font-size: 14px;
+	font-weight: 500;
+	float: left;
+}
+
+#con4_wrap .over strong {
+	display: block;
+	font-size: 25px;
+	font-weight: 500;
+	float: left;
+	height: 40px;
+	width: 255px;
+}
+
+#con4_wrap .over p {
+	display: block;
+	font-size: 10px;
+	float: right;
+	text-align: right;
+	margin-top: 10px;
+}
+
+#con4_wrap .overbox:hover, #con4_wrap .overbox.on {
+	background: rgba(0, 0, 0, .5);
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+#con4_wrap .over span, #con4_wrap .over strong, #con4_wrap .over p {
+	opacity: 0;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+#con4_wrap .overbox:hover span, #con4_wrap .overbox:hover strong,
+	#con4_wrap .overbox:hover p, #con4_wrap .overbox.on span, #con4_wrap .overbox.on strong,
+	#con4_wrap .overbox.on p {
+	opacity: 1;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+/* content4 css 종료 */
+
+/* 영화포스터 슬라이더 시작 */
+#content1 .bx-controls .bx-controls-direction a, #content1 .bx-controls .bx-controls-auto,
+	#content1 .bx-controls .bx-pager {
+	position: absolute;
+	z-index: 100;
+	text-indent: -9999px;
+}
+
+#content1 .bx-controls .bx-controls-direction a {
+	top: 438px;
+	width: 50px;
+	height: 80px;
+}
+
+#content1 .bx-controls .bx-controls-direction .bx-prev {
+	left: 0px;
+	background: url("../images/main/icon_big_left.png") no-repeat;
+}
+
+#content1 .bx-controls .bx-controls-direction .bx-next {
+	right: 0px;
+	background: url("../images/main/icon_big_right.png") no-repeat;
+}
+
+#content1 .bx-controls .bx-controls-auto {
+	top: 910px;
+	left: 50%;
+	margin: -3px 0px 0px 30px;
+}
+
+#content1 .bx-controls .bx-controls-auto a {
+	display: block;
+	width: 24px;
+	height: 24px;
+	background: url("../images/common/icon_controls.png") no-repeat;
+}
+
+#content1 .bx-controls .bx-controls-auto .bx-start {
+	background-position: -24px 0px;
+}
+
+#content1 .bx-controls .bx-controls-auto a.active {
+	display: none;
+}
+
+#content1 .bx-controls .bx-pager {
+	top: 850px;
+	left: 50%;
+	margin-left: -30px;
+	width: 60px;
+}
+
+#content1 .bx-controls .bx-pager a {
+	float: left;
+	width: 15px;
+	height: 15px;
+	border: 2px solid #fff;
+	margin-right: 10px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+
+#content1 .bx-controls .bx-pager a.active {
+	background: #fff;
+}
+/* 영화포스터 슬라이더 종료 */
+
+/* 이벤트 배너 슬라이더 시작 */
+#evtBaSliWarp .bx-controls .bx-controls-direction a, #evtBaSliWarp .bx-controls .bx-controls-auto,
+	#evtBaSliWarp .bx-controls .bx-pager {
+	position: absolute;
+	z-index: 100;
+	text-indent: -9999px;
+}
+
+#evtBaSliWarp .bx-controls .bx-controls-direction a {
+	top: 150px;
+	width: 50px;
+	height: 80px;
+}
+
+#evtBaSliWarp .bx-controls .bx-controls-direction .bx-prev {
+	left: 0px;
+	background: url("../images/main/icon_big_left.png") no-repeat;
+}
+
+#evtBaSliWarp .bx-controls .bx-controls-direction .bx-next {
+	right: 0px;
+	background: url("../images/main/icon_big_right.png") no-repeat;
+}
+/* #evtBaSliWarp .bx-controls .bx-controls-auto
+{
+    top : 310px;
+    left : 50%;
+    margin-left : 50px
+}
+#evtBaSliWarp .bx-controls .bx-controls-auto a
+{
+    display : block;
+    width : 32px;
+    height : 32px;
+    background : url("../images/main/btn_pause.png") no-repeat;
+}
+#evtBaSliWarp .bx-controls .bx-controls-auto .bx-start
+{
+    background-position : -32px 0px;
+}
+#evtBaSliWarp .bx-controls .bx-controls-auto a.active
+{
+    display : none;
+} */
+#evtBaSliWarp .bx-controls .bx-pager {
+	top: 310px;
+	left: 50%;
+	margin-left: -30px;
+	width: 60px;
+}
+
+#evtBaSliWarp .bx-controls .bx-pager a {
+	float: left;
+	width: 15px;
+	height: 15px;
+	border: 2px solid #fff;
+	margin-right: 10px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	background: none;
+}
+
+#evtBaSliWarp .bx-controls .bx-pager a.active {
+	background: #fff;
+}
+
+/* 이벤트 배너 슬라이더 종료 */

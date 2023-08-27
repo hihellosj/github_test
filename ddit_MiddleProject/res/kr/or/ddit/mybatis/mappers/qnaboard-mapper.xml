@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+
+
+
+<!-- 글쓰기 -->
+<insert id="insertBoard" parameterType="boardVO" >
+  insert into customer_service
+  values(
+    qnaboard_num_seq.nextval,
+	#{cs_category},
+	#{cs_title},
+	#{cs_content},
+	sysdate,
+	#{cs_answer},
+    #{cs_ans_date},
+	'답변대기',
+	#{user_id},
+    #{cs_save_photo},
+    #{cs_photo}
+  )
+</insert>
+
+<update id="insertAnswer" parameterType="boardVO">
+	update customer_service set
+   		 cs_ans_state = '답변완료',
+    	 cs_answer = #{cs_answer},
+   		 cs_ans_date = sysdate
+    where cs_no = #{cs_no}
+  
+</update>
+
+<update id="updateAnswer" parameterType="boardVO">
+	update customer_service set
+   		 cs_ans_state = '답변완료',
+    	 cs_answer = #{cs_answer},
+   		 cs_ans_date = sysdate
+    where cs_no = #{cs_no}
+  
+</update>
+
+<!-- 글삭제 -->
+<delete id="deleteBoard" parameterType="int">
+  delete customer_service where cs_no = #{data}
+</delete>
+
+
+
+
+
+
+<select id="getAllboard" resultType="boardVO">
+	select * from customer_service order by cs_no desc
+</select>
+
+<select id="selectBoard" parameterType="boardVO" resultType="boardVO">
+	select * from customer_service where user_id=#{user_id} order by cs_no desc
+</select>
+
+<select id="getBoard" parameterType="int" resultType="boardVO">
+		select * from customer_service where cs_no=#{cs_no}
+</select>
+
+</mapper>
+
+
+
+
+
+
+
+
+

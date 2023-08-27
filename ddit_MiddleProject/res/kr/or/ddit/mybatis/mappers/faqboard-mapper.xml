@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="Faqboard">
+
+<select id="selectBoard" resultType="faqboardVO"> 
+	select * from faq_board order by fb_ctg, fb_title
+</select>
+
+<insert id="insertBoard" parameterType="faqboardVO">
+	insert into faq_board(fb_no, fb_title, fb_content, user_id, fb_ctg)
+	values(faq_seq.NEXTVAL, #{fb_title}, #{fb_content}, 'admin', #{fb_ctg})
+</insert>
+
+<delete id="deleteBoard" parameterType="int">
+	delete from faq_board where fb_no = #{fb_no}
+</delete>
+
+<update id="updateBoard" parameterType="faqboardVO">
+	update faq_board set
+		fb_title = #{fb_title}, fb_content = #{fb_content}, fb_ctg = #{fb_ctg}
+	where fb_no = #{fb_no}
+</update>
+
+ <select id="getBoard" parameterType="int" resultType="faqboardVO">
+    select * from faq_board where fb_no = #{fb_no}
+ </select>
+ 
+ 
+</mapper>

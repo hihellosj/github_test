@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이 문서는 myBatis에서 처리할 SQL문을 작성하는 문서입니다. -->
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="NoticeBoard">
+
+
+
+	<insert id="insertBoard" parameterType="noticeboardVO" >
+		insert into board(
+			bo_no, bo_title, bo_content, bo_writer, bo_date, bo_hit
+		) values(
+			seq_board.nextval, #{bo_title},#{bo_content},#{bo_writer},
+			sysdate, 0
+		)
+	</insert>
+	
+	<select id="selectBoardList" resultType="noticeboardVO">
+		select
+			bo_no, bo_title, bo_content, bo_writer, bo_date, bo_hit
+		from board
+		order by bo_no desc
+	</select>
+	
+	<select id="selectBoard" parameterType="int" resultType="noticeboardVO">
+		select
+			bo_no, bo_title, bo_content, bo_writer, bo_date, bo_hit
+		from board
+		where bo_no = #{bo_no}
+	</select>
+	
+	
+	<update id="updateBoard" parameterType="noticeboardVO">
+		update board
+		set
+			bo_title = #{bo_title},
+			bo_content = #{bo_content}
+		where bo_no = #{bo_no}
+	</update>
+	
+	
+	<delete id="deleteBoard" parameterType="int">
+		delete from board where bo_no = #{bo_no}
+	</delete>
+	
+	
+<update id="updateBoardHit" parameterType="noticeboardVO">
+		update board
+		SET bo_hit = bo_hit + 1
+		where bo_no = #{bo_no}
+	</update>
+
+
+	
+</mapper>	
+
+
+
+
+
+
+
+
+
+
+

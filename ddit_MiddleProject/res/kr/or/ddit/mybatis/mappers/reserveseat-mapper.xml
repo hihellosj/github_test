@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이 문서는 mybatis에서 처리할 SQL문을 작성하는 문서입니다. -->
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" 
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="reserve">  
+ 
+	<select id="selectAll" parameterType="reserveVO" resultType = "reserveVO">
+		select m_id, t_no, showtime, seats from reservation_info
+		where m_id = #{MOVIE_ID}
+		and t_no = #{THEATER_ID}
+		and showtime = #{SHOWTIME}
+	</select>
+	
+	<select id="selectOne" parameterType="reserveVO" resultType = "reserveVO">
+		select * from reservation_info ri, movie m
+		where ri.m_id=m.m_id
+		and ri.m_id = #{m_id}
+		and ri.t_no = #{t_no}
+		and ri.showtime = #{SHOWTIME}
+		and ri.user_id =#{user_id}
+	</select>
+ 
+</mapper>

@@ -1,0 +1,254 @@
+@charset "utf-8";
+
+form {
+	padding-left : 30px;
+	font-size: 15px;
+	/*color : gray;*/
+	width: 700px;
+	height: 800px;
+	
+}
+form .final_btn {
+	padding-top : 10px;
+	padding-left:100px;
+}
+
+div{
+	border : none;	
+}
+input{
+	width: 400px;
+	margin : 1px;
+	font-size: 12px;
+	color : gray;
+}
+
+.wbtn{
+	text-decoration: underline;
+	width:80px;
+	height: 100px;
+	background: transparent;
+	color: #333;
+	font-size: 13px;
+	border : none;
+	text-align: left;
+	margin-left: 30px;
+}
+
+.btn{     
+	text-decoration: none;
+	outline: none;
+	width: 100px;
+	height: 30px;
+	border-radius: 2px;
+	background: #333;
+	border: 1px solid #222;
+	color: #fff;
+	text-align: center;
+	letter-spacing: 1px;
+	font-size: 12px;
+}
+
+
+/* common class */
+#update_tit h2 {
+	height: 80px;
+	line-height: 100px;
+	font-weight: 700;
+	font-size: 30px;
+	border-bottom: 1px solid #ddd;
+}
+
+/* update */
+#update_tit.update_main {
+	width: 100%;
+	height: 210px;
+	padding-top: 106px;
+	background: url("../images/bg-detail-db.png") no-repeat center 187px;
+	margin: 0 auto;
+}
+#update_tit ul.tablist {
+	width: 720px;
+	height: 130px;
+	margin: 0 auto;
+}
+
+#update_tit ul.tablist li {
+	float: left;
+	width: 360px;
+	height: 130px;
+	line-height: 130px;
+	font-size: 22px;
+	font-weight: 550;
+	color: #fff;
+	text-align: center;
+}
+
+#update_tit ul.tablist li:last-child {
+	float: right;
+}
+
+#update_tit ul.tablist li:hover, 
+#update_tit ul.tablist li:focus,
+#update_tit ul.tablist li.active {
+	color: #700ff0;
+	color: #fff;
+	background: #00ff0000;
+	cursor: pointer;
+}
+
+#update_menu div.tabpanel button:hover, 
+#update_menu div.tabpanel button:focus,
+#update_menu div.tabpanel button:active {
+	color: #fff;
+	background: #700ff0;
+	cursor: pointer;
+}
+
+
+/* update */
+#update_menu {
+	padding: 416px 0 90px;
+}
+
+
+#pwChkResult{
+	font-size: 15px;
+	color:red;
+}
+
+
+
+
+#update_menu .up_form {
+	display: block;
+	width: 950px;
+	margin: 0 auto;
+}
+
+#update tr {
+	font-size: 17px;
+	height: 85px;
+	text-align: left;
+}
+
+#update tr input[type="text"], #update tr input[type="password"] {
+	width: 206px;
+	padding: 3px 0 3px 10px;
+	font-size: 16px;
+}
+
+#update tr select {
+	font-size: 16px;
+	height: 32px;
+	padding: 0 3px 2px 4.5px;
+}
+
+#update .tr4 .jo_f_w {
+	width: 50px;
+}
+
+#update tr th {
+	width: 150px;
+	background: url("../images/icon_check.jpg") no-repeat 0 18px;
+}
+
+
+#update tr th:nth-child(1) {
+	padding-left: 8px;
+	background-position-x: 0px;
+}
+
+
+#update tr+tr th:nth-child(3) {
+	padding-left: 100px;
+	background-position-x: 90px;
+}
+
+
+#update .tr3 td label.jo_fz {
+	font-size: 17px;
+}
+
+#update tr td .jo_fz {
+	font-size: 14px;
+}
+
+#update .tr5 td span {
+	padding: 0 2.5px 0 2.5px;
+}
+
+#update button {
+	color: #700ff0;
+	border: 2px solid #700ff0;
+	margin-left: 15px;
+}
+
+#update button:hover, #update button:focus {
+	color: #fff;
+	background: #700ff0;
+}
+
+#update tr td button {
+	padding: 4px 13px;
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+#update_menu .update_member th button {
+	width: 120px;
+	height: 35px;
+	font-size: 16px;
+	font-weight: 700;
+	color: #700ff0;
+	border: 2px solid #700ff0;
+	margin: 30px 20px 0;
+}
+
+#update_menu .update_member th button:last-child {
+	color: #fff;
+	background: #700ff0;
+	border-color: #700ff0;
+	font-weight: 700;
+	
+	/*
+	border-color: #999;
+	color: #999;
+	font-weight: 400;
+	*/
+}
+
+#update_menu .update_member th button:hover, #update_main .update_member th button:focus
+{
+	border-color: #999;
+	color: #999;
+	font-weight: 400;
+	
+	/*
+	color: #fff;
+	background: #700ff0;
+	border-color: #700ff0;
+	font-weight: 700;
+	*/
+}
+
+/* update opacity, transition */
+#update button, #update_menu .update_member th button {
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+#update_content #update_menu .tabpanel {
+	display: none;
+}
+
+#update_content #update_menu .tabpanel.active {
+	display: block;
+}
+
+#mailCheck {
+	margin-left: 20px;
+}

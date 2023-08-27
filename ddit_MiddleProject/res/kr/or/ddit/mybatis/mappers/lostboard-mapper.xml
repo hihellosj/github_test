@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이 문서는 myBatis에서 처리할 SQL문을 작성하는 문서입니다. -->
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="lostboard">
+	
+	<!-- 동적쿼리 안쓸수도 있지만 일단 넣어놔  -->
+	<sql id="dynamicCondition">
+   <where>
+       <if test="!(stype == '' or sword == '')">
+         ${stype} like  '%'||#{sword}||'%'
+       </if>
+   </where>
+
+	</sql>
+
+	<!-- 분실물게시판등록 -->
+	<insert id="insertLostboard" parameterType="lBoardVO">
+		insert into lost_board(
+			lb_no, lb_title, lb_content, lb_date, user_id
+		) values (
+			seq_lostboard.nextval, #{lb_title}, #{lb_content}, 
+			sysdate, #{user_id}
+		)
+	
+	</insert>
+		
+	
+	<!-- 로그인한 회원의 분실물게시판 리스트 구하기 -->
+	<select id="getBoardList" resultType="lBoardVO" parameterType="String">
+	   select * from lost_board where user_id=#{user_id}
+	</select>
+	
+	<!-- 게시판번호 정보로 게시판정보 가져오기 -->
+	<select id="getBoard" parameterType="int" resultType="lBoardVO">
+    select * from lost_board where lb_no = #{lb_no}
+ 	</select>
+	
+	<!-- 게시판 삭제 -->
+ 	<delete id="deleteBoard" parameterType="String">
+ 		delete from lost_board where lb_no = #{lb_no}
+ 	</delete>
+ 
+ 	<!-- 게시판 수정 -->
+ 	<update id="updateBoard" parameterType="lBoardVO">
+		 update lost_board set 
+		 	lb_title = #{lb_title}, lb_content = #{lb_content} 
+		 where lb_no = #{lb_no}
+ 	</update>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+

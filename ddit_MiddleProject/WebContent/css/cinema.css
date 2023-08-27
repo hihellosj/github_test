@@ -1,0 +1,937 @@
+@charset "UTF-8";
+
+/* common class */
+#sub_m_tit h2 {
+	height: 80px;
+	line-height: 80px;
+	font-weight: 700;
+	font-size: 30px;
+	border-bottom: 1px solid #ddd;
+}
+/* movie */
+#mv_content #sub_m_tit {
+	width: 1200px;
+	padding-top: 106px;
+	margin: 0 auto;
+}
+
+#sub_m_tit ul.mv_menu li {
+	float: left;
+	width: 33.3333%;
+	height: 70px;
+	line-height: 68px;
+	font-size: 25px;
+	color: #aaa;
+}
+
+#sub_m_tit ul.mv_menu li:nth-child(1) {
+	border-bottom: 2px solid #aaa;
+}
+
+#sub_m_tit ul.mv_menu li:nth-child(2) {
+	color: #700ff0;
+	font-weight: 500;
+	border-bottom: 2px solid #700ff0;
+}
+
+#sub_m_tit ul.mv_menu li:nth-child(3) {
+	border-bottom: 2px solid #aaa;
+}
+
+#sub_m_tit ul.mv_menu li:hover {
+	color: #700ff0;
+	border-bottom: 2px solid #700ff0;
+}
+
+#sub_m_tit ul.mv_menu li a:focus {
+	color: #700ff0;
+	padding-bottom: 18px;
+	border-bottom: 2px solid #700ff0;
+}
+/* join */
+#sub_m_tit.join_menu {
+	width: 100%;
+	height: 180px;
+	padding-top: 80px;
+	margin: 0 auto;
+}
+#sub_m_tit ul.tablist {
+	width: 550px;
+	height: 130px;
+	margin: 80px auto 0px;
+}
+
+.tablist li:hover:after, .tablist li:focus:after, .tablist li.active:after
+	{
+	width: 50%;
+}
+
+#sub_m_tit ul.tablist li {
+	float: left;
+	width: 275px;
+	height: 70px;
+	line-height: 70px;
+	font-size: 20px;
+	font-weight: 700;
+	text-align: center;
+}
+
+#sub_m_tit ul.tablist li:last-child {
+	float: right;
+}
+
+#sub_m_tit ul.tablist li:hover, #sub_m_tit ul.tablist li:focus,
+	#sub_m_tit ul.tablist li.active {
+	color: #700ff0;
+	background: #fff;
+	cursor: pointer;
+}
+
+/* join */
+#cinema_main {
+	padding: 300px 0 90px;
+}
+
+#cinema_main #tabpanel1 {
+	display: block;
+	width: 1200px;
+	margin: 0 auto;
+	height: 1980px;
+}
+
+#cinema_main #tabpanel1 .join_privacy {
+	width: 900px;
+	margin: 0 auto;
+	padding-bottom: 50px;
+}
+
+#cinema_main #tabpanel1 .join_privacy:last-child {
+	margin-top: 50px;
+}
+
+#cinema_main #tabpanel1 .join_privacy>div:first-child {
+	border-left: 5px solid #700ff0;
+}
+
+#cinema_main #tabpanel1 .join_privacy h3 {
+	padding: 25px 0 25px 50px;
+	color: #700ff0;
+	font-size: 23px;
+	font-weight: 700;
+}
+
+#cinema_main #tabpanel1 .join_privacy p {
+	height: 200px;
+	line-height: 165%;
+	font-size: 15px;
+	overflow: auto;
+	padding: 0 50px 50px;
+}
+
+#cinema_main #tabpanel1 .join_privacy .jo_chk {
+	bottom: 0;
+	right: 0;
+}
+
+#cinema_main #tabpanel1 .join_privacy .jo_chk span {
+	color: #700ff0;
+	font-weight: 500;
+}
+
+#cinema_main .jo_form {
+	display: block;
+	width: 1250px;
+	margin: 0 auto;
+}
+
+#join tr {
+	font-size: 20px;
+	height: 85px;
+	text-align: left;
+}
+
+#join tr input[type="text"], #join tr input[type="password"] {
+	width: 206px;
+	padding: 3px 0 3px 10px;
+	font-size: 16px;
+}
+
+#join tr select {
+	font-size: 16px;
+	height: 32px;
+	padding: 0 3px 2px 4.5px;
+}
+
+#join .tr5 .jo_f_w {
+	width: 50px;
+}
+
+#join tr th {
+	width: 130px;
+	background: url("../images/member/icon_check.jpg") no-repeat 0 18px;
+}
+
+#join .tr4 th:nth-child(3), #join .tr5 th:nth-child(3) {
+	background-image: none;
+}
+
+#join tr th:nth-child(1) {
+	padding-left: 8px;
+	background-position-x: 0px;
+}
+
+#join tr+tr th:nth-child(3) {
+	padding-left: 100px;
+	background-position-x: 90px;
+}
+
+#join .tr3 td label.jo_fz {
+	font-size: 17px;
+}
+
+#join tr td .jo_fz {
+	font-size: 14px;
+}
+
+#join .tr5 td span {
+	padding: 0 2.5px 0 2.5px;
+}
+
+#join button {
+	color: #700ff0;
+	border: 2px solid #700ff0;
+	margin-left: 15px;
+}
+
+#join button:hover, #join button:focus {
+	color: #fff;
+	background: #700ff0;
+}
+
+#join tr td button {
+	padding: 4px 13px;
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+#cinema_main .join_member th button {
+	width: 140px;
+	height: 50px;
+	font-size: 23px;
+	font-weight: 700;
+	color: #700ff0;
+	border: 2px solid #700ff0;
+	margin: 70px 20px 0;
+}
+
+#cinema_main .join_member th button:last-child {
+	border-color: #999;
+	color: #999;
+	font-weight: 400;
+}
+
+#cinema_main .join_member th button:hover, #cinema_main .join_member th button:focus
+	{
+	color: #fff;
+	background: #700ff0;
+	border-color: #700ff0;
+	font-weight: 700;
+}
+
+/* join opacity, transition */
+#join button, #cinema_main .join_member th button {
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+#join_content #cinema_main .tabpanel {
+	display: none;
+}
+
+#join_content #cinema_main .tabpanel.active {
+	display: block;
+}
+
+/* movie */
+#mv_content #mv_two {
+	padding-top: 1023px;
+	padding-bottom: 130px;
+}
+
+#mv_list {
+	width: 100%;
+	height: 41px;
+	line-height: 41px;
+}
+
+#mv_list h3, #mv_list a {
+	position: absolute;
+	float: left;
+}
+
+#mv_list h3 {
+	top: 0;
+	left: 541px;
+}
+
+
+
+#mv_list a:hover, #mv_list a:focus {
+	color: #fff;
+	background: #700ff0 url("../images/common/icon_plus_hover.png")
+		no-repeat 14px 50%;
+}
+
+#mv_list h3, .mv_steel h3 {
+	font-size: 20px;
+	font-weight: 700;
+}
+
+#mv_content .tablist {
+	width: 1200px;
+	height: 160px;
+	margin-top: 18px;
+}
+
+#mv_content .tablist li {
+	float: left;
+	position: relative;
+	color: #fff;
+	cursor: pointer;
+}
+
+#mv_content .tablist li+li {
+	margin-left: 21px;
+}
+
+#mv_content .tablist li:last-child {
+	margin-left: 22px;
+}
+
+#mv_content .tablist li div {
+	position: absolute;
+	width: 284px;
+	height: 160px;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0);
+}
+
+#mv_content .tablist li div:hover, #mv_content .tablist li div.on {
+	background: rgba(0, 0, 0, 0.6);
+}
+
+#mv_content .tablist li div strong {
+	display: block;
+	padding-top: 47px;
+	font-size: 28px;
+	font-weight: 500;
+}
+
+#mv_content .tablist li div p {
+	font-size: 16px;
+	font-weight: 100;
+}
+/* tabpanel */
+#mv_content #mv_one {
+	top: 346px;
+	left: 0;
+}
+
+#mv_content .tabpanel>img {
+	display: inline-block;
+	padding-left: 100px;
+}
+
+#mv_content .mv_maintxt {
+	display: inline-block;
+	width: 610px;
+	margin-left: 80px;
+}
+
+#mv_content .mv_maintxt .mv_popu {
+	color: #eb651e;
+	font-size: 20px;
+}
+
+#mv_content .mv_maintxt span {
+	font-weight: 500;
+}
+
+#mv_content .mv_maintxt h4 {
+	font-size: 36px;
+	font-weight: 700;
+}
+
+#mv_content .mv_maintxt .mv_italic {
+	font-style: italic;
+}
+
+#mv_content .mv_maintxt strong, #mv_content .mv_maintxt p {
+	margin-top: 22px;
+}
+
+#mv_content .mv_efc {
+	float: right;
+	top: 380px;
+	right: 0;
+}
+
+#mv_content .mv_efc a {
+	display: inline-block;
+	color: #700ff0;
+	font-size: 14px;
+	border: 2px solid #700ff0;
+	padding: 5px 16px;
+}
+
+#mv_content .mv_efc a+a {
+	margin-left: 10px;
+}
+
+#mv_content .mv_efc a:hover, #mv_content .mv_efc a:focus {
+	color: #fff;
+	background: #700ff0;
+}
+
+#mv_content .mv_steel {
+	display: inline-block;
+	width: 654px;
+	height: 155px;
+	top: 425px;
+	left: 566px;
+}
+
+#mv_content .mv_steel h3 {
+	padding-bottom: 10px;
+	padding-left: 22px;
+}
+
+#mv_content .mv_steel .media_slider {
+	width: 632px;
+	height: 116px;
+	overflow: hidden;
+}
+
+#mv_content .mv_steel .media_slider ul {
+	margin-left: 22px;
+}
+
+#mv_content .mv_steel .media_slider ul li {
+	float: left;
+}
+
+#mv_content .mv_steel .media_slider .visual .mv_play a {
+	background: url("../images/movie/icon_play.png") no-repeat 30px 30px;
+}
+
+/* movie slider */
+#mv_content .mv_steel .media_slider .visual {
+	width: 1920px !important;
+	height: 116px;
+}
+
+#mv_content .mv_steel .media_slider .bx-controls .bx-controls-direction a,
+	#mv_content  .mv_steel .bx-controls .bx-controls-auto, #mv_content .mv_steel .bx-controls .bx-pager
+	{
+	position: absolute;
+	z-index: 100;
+	text-indent: -9999px;
+}
+
+#mv_content .mv_steel .media_slider .bx-controls .bx-controls-direction a
+	{
+	top: calc(( 116px - 39px)/2);
+	width: 13px;
+	height: 39px;
+}
+
+#mv_content .mv_steel .media_slider .bx-controls .bx-controls-direction .bx-prev
+	{
+	left: 0px;
+	background: url("../images/common/icon_small_left.png") no-repeat;
+}
+
+#mv_content .mv_steel .media_slider .bx-controls .bx-controls-direction .bx-next
+	{
+	right: 0px;
+	line-height: 39px;
+	background: url("../images/common/icon_small_right.png") no-repeat;
+}
+
+#mv_content .mv_steel .media_slider .bx-controls-direction .white {
+	position: absolute;
+	top: 0px;
+	width: 22px;
+	height: 116px;
+	background: #fff;
+}
+
+#mv_content .mv_steel .media_slider .bx-controls-direction .white:first-child
+	{
+	left: 0;
+}
+
+#mv_content .mv_steel .media_slider .bx-controls-direction .white:last-child
+	{
+	right: 0px;
+}
+
+#mv_content #mv_one .tabpanel {
+	display: none;
+}
+
+#mv_content #mv_one .tabpanel.active {
+	display: block;
+}
+
+#mv_content #mv_three a {
+	display: inline-block;
+}
+
+#mv_content #mv_three a+a {
+	margin: 30px 0 100px;
+}
+
+/* movie opacity, transition */
+#mv_content .tablist .tab div strong, #mv_content .tablist .tab div p {
+	-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
+	opacity: 0;
+}
+
+#mv_content .tablist .tab div:hover, #mv_content .tablist .tab div.on,
+	#mv_content .tablist .tab div:hover strong, #mv_content .tablist .tab div:hover p,
+	#mv_content .tablist .tab div.on strong, #mv_content .tablist .tab div.on p
+	{
+	-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';
+	opacity: 1;
+}
+
+#sub_m_tit ul li, #mv_list a, #mv_content .tablist .tab div, #mv_content .tablist .tab div.active,
+	#mv_content .tablist .tab div strong, #mv_content .tablist .tab div p,
+	#mv_content .mv_efc a {
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+
+
+/* 극장 소개 */
+.thearterIntr_contents .tit_area dt {
+    font-size: 2.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.thearterIntr_contents .tit_area dd {
+    margin: 0.5em 0;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+dd {
+    display: block;
+    margin-inline-start: 40px;
+}
+
+.thearterIntr_contents .intr_dece {
+    font-size: 1.0em;
+    margin-bottom: 3.777em;
+    
+}
+
+.location_contents .bold_txt {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.location_contents .location_desc b {
+    font-size: 1.8em;
+    display: inline-block;
+}
+
+b {
+    font-weight: bold;
+}
+
+.location_contents .location_desc .desc_area {
+    padding-bottom: 5em;
+    border-bottom: 1px solid #aaa;
+}
+
+.location_contents .location_desc .desc_area .left_txt {
+    float: left;
+    font-size: 1.2em;
+    padding-left: 1.8em;
+    background: url(/PETC/assets/images/sub/map_icon.svg) left center no-repeat;
+}
+
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.location_contents .location_desc .desc_area .right_area {
+    float: right;
+}
+
+.location_contents .location_desc .desc_area .right_area dl {
+    display: inline-block;
+    vertical-align: middle;
+}
+.location_contents .location_desc .desc_area .right_area dl dt {
+    display: inline-block;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #700ff0;
+    margin-right: 10px;
+    margin-left: 25px;
+    vertical-align: middle;
+}
+
+
+.location_contents .location_desc .desc_area .right_area dl dd {
+    font-size: 1.1em;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.location_contents .traffic_conts {
+    padding-top: 1.3em;
+}
+
+
+.location_contents .traffic_conts .sec_type {
+    margin-bottom: 5em;
+}
+
+.location_contents .traffic_conts .sec_type .tit {
+    float: left;
+    font-size: 1.4em;
+    font-weight: 700;
+    width: 10%;
+}
+
+.location_contents .traffic_conts .sec_type .right_area {
+    float: left;
+    width: calc(100% - 10%);
+    margin-top: 25px;
+}
+
+.location_contents .traffic_conts .sec_type .bus_area{
+    float: left;
+    width: calc(100% - 10%);
+    margin-top: 9px;
+}
+
+.location_contents .traffic_conts .sec_type .parking_area{
+    float: left;
+    width: calc(100% - 10%);
+    margin-top: 10px;
+}
+
+.location_contents .traffic_conts .sec_type .subway_area span {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.location_contents .traffic_conts .sec_type .subway_area span.orange {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #F9880A;
+    text-align: center;
+    line-height: 26px;
+    font-weight: 500;
+    color : #fff
+}
+
+.mb30 {
+    margin-bottom: 30px !important;
+}
+
+.location_contents .traffic_conts .sec_type .bus_area dl dt {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 13px;
+}
+
+.location_contents .traffic_conts .sec_type .bus_area dl dd {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.location_contents .traffic_conts .sec_type .bus_area dl dd span.green {
+    background: #47AF1B;
+}
+
+.location_contents .traffic_conts .sec_type .bus_area dl dd span {
+    display: inline-block;
+    padding: 3px 7px;
+    font-size: 12px;
+    margin-right: 16px;
+}
+
+.location_contents .traffic_conts .sec_type .bus_area dl dd span.purple {
+    background: #6175F5;
+}
+
+.location_contents .traffic_conts .sec_type .bus_area dl dt {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 13px;
+}
+
+.location_contents .traffic_conts .sec_type .bus_area dl dd {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.location_contents .traffic_conts .sec_type .bus_area dl dd span.green {
+    background: #47AF1B;
+    color : #fff
+}
+
+.location_contents .traffic_conts .sec_type .bus_area dl dd span.purple {
+    background: #6175F5;
+    color : #fff
+}
+
+.location_contents .traffic_conts .sec_type .parking_area p {
+    font-size: 1.1em;
+    margin-bottom: 1.5em;
+}
+
+.location_contents .traffic_conts .sec_type .parking_area dl {
+    margin-bottom: 3em;
+}
+
+.location_contents .traffic_conts .sec_type .parking_area dl dt {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+.location_contents .traffic_conts .sec_type .parking_area dl dd {
+    font-size: 1.0em;
+}
+
+
+/* 상영관 소개 */
+
+
+.inner-wrap {
+    width: 1100px;
+    margin: 0 auto
+}
+
+.inner-wrap:after,.inner-wrap:before {
+    content: '';
+    display: table
+}
+
+.inner-wrap:after {
+    clear: both
+}
+
+.theater-special-main p {
+    margin: 0;
+    padding: 0
+}
+
+.theater-special-main .brn-link {
+    position: relative;
+    height: 870px
+}
+
+.theater-special-main .brn-link .tit-area {
+    padding: 94px 0 0 0
+}
+
+.theater-special-main .brn-link .tit-area .tit {
+    font-size: 0;
+    line-height: 0
+}
+
+.theater-special-main .brn-link .tit-area .txt {
+    padding: 20px 0 0 0;
+    font-size: 2.1333em;
+    color: #351f66;
+    line-height: 1.2
+}
+
+.theater-special-main .brn-link .cell {
+    overflow: hidden;
+    position: absolute;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    border-radius: 10px
+}
+
+.theater-special-main .brn-link .cell.link-boutique {
+    top: 50px;
+    left: 279px;
+    width: 540px;
+    height: 260px;
+    background-image: url(https://img.megabox.co.kr/static/pc/images/theater/bg-bou.png)
+}
+
+.theater-special-main .brn-link .cell.link-db {
+    top: 330px;
+    left: 0;
+    width: 820px;
+    height: 260px;
+    background-image: url(https://img.megabox.co.kr/static/pc/images/theater/bg-db.png)
+}
+
+.theater-special-main .brn-link .cell.link-mx {
+    top: 610px;
+    left: 280px;
+    width: 540px;
+    height: 260px;
+    background-image: url(https://img.megabox.co.kr/static/pc/images/theater/bg-mx.png)
+}
+
+.theater-special-main .brn-link .cell.link-kids {
+    top: 610px;
+    right: 0;
+    width: 260px;
+    height: 260px;
+    background-image: url(https://img.megabox.co.kr/static/pc/images/theater/bg-kids.png)
+}
+
+.theater-special-main .brn-link .cell.link-comfort {
+    top: 330px;
+    right: 0;
+    width: 260px;
+    height: 260px;
+    background-image: url(https://img.megabox.co.kr/static/pc/images/theater/bg-comfort.png)
+}
+
+.theater-special-main .brn-link .cell.link-balcony {
+    top: 610px;
+    left: 0;
+    width: 260px;
+    height: 260px;
+    background-image: url(https://img.megabox.co.kr/static/pc/images/theater/bg-balcony.png)
+}
+
+.theater-special-main .brn-link .cell.link-first {
+    top: 610px;
+    left: 0;
+    width: 260px;
+    height: 260px;
+    background-image: url(https://img.megabox.co.kr/static/pc/images/theater/bg-sp2.png)
+}
+
+.theater-special-main .brn-link .cell.link-private {
+    top: 50px;
+    right: 0;
+    width: 260px;
+    height: 260px;
+    background-image: url(https://img.megabox.co.kr/static/pc/images/theater/bg-private.png)
+}
+
+.theater-special-main .brn-link .cell.link-puppy {
+    top: 610px;
+    left: 0;
+    width: 260px;
+    height: 260px;
+    background-image: url(https://img.megabox.co.kr/static/pc/images/theater/bg-puppy.png)
+}
+
+v {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    text-decoration: none
+}
+
+.theater-special-main .brn-link .cell a .link-txt {
+    padding: 30px 20px 30px 30px;
+}
+
+.theater-special-main .brn-link .cell a .link-txt:after {
+    content: '';
+    /* display:block; */
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    z-index: 10;
+    width: 29px;
+    height: 12px;
+    background: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-sp-link.png)
+}
+
+.theater-special-main .brn-link .cell a .link-txt .tit {
+    padding: 0 0 15px 0;
+    font-size: 1.4666em;
+    line-height: 1.1;
+    font-family: Roboto
+}
+
+.theater-special-main .brn-link .cell a .hover {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+    border-radius: 10px
+}
+
+.theater-special-main .brn-link .cell a:hover .hover {
+    box-shadow: 5px 5px 10px rgba(0,0,0,.2)
+}
+
+.theater-special-main .brn-link .link-boutique a:focus .hover,.theater-special-main .brn-link .link-boutique a:hover .hover {
+    background: rgba(81,46,26,.9) url(https://img.megabox.co.kr/static/pc/images/theater/bg-bou-logo.png) center no-repeat
+}
+
+.theater-special-main .brn-link .link-mx a:focus .hover,.theater-special-main .brn-link .link-mx a:hover .hover {
+    background: rgba(55,53,105,.9) url(https://img.megabox.co.kr/static/pc/images/theater/bg-mx-logo.png) center no-repeat
+}
+
+.theater-special-main .brn-link .link-db a:focus .hover,.theater-special-main .brn-link .link-db a:hover .hover {
+    background: rgba(26,36,77,.9) url(../images/cinema/bg-dolby-logo.png) center no-repeat
+}
+
+.theater-special-main .brn-link .link-kids a:focus .hover,.theater-special-main .brn-link .link-kids a:hover .hover {
+    background: rgba(207,141,0,.9) 
+}
+
+.theater-special-main .brn-link .link-comfort a:focus .hover,.theater-special-main .brn-link .link-comfort a:hover .hover {
+    background: rgba(49,29,57,.9) url(https://img.megabox.co.kr/static/pc/images/theater/bg-comfort-logo.png) center no-repeat
+}
+
+.theater-special-main .brn-link .link-balcony a:focus .hover,.theater-special-main .brn-link .link-balcony a:hover .hover {
+    background: rgba(46,44,62,.9) url(https://img.megabox.co.kr/static/pc/images/theater/bg-balcony-logo.png) center no-repeat
+}
+
+.theater-special-main .brn-link .link-first a:focus .hover,.theater-special-main .brn-link .link-first a:hover .hover {
+    background: rgba(71,53,38,.9) url(https://img.megabox.co.kr/static/pc/images/theater/bg-sp-logo.png) center no-repeat
+}
+
+.theater-special-main .brn-link .link-private a:focus .hover,.theater-special-main .brn-link .link-private a:hover .hover {
+    background: rgba(71,53,38,.9) url(https://img.megabox.co.kr/static/pc/images/theater/bg-private-logo.png) center no-repeat
+}
+
+.theater-special-main .brn-link .link-puppy a:focus .hover,.theater-special-main .brn-link .link-puppy a:hover .hover {
+    background: rgba(63,24,88,.9)
+}
+

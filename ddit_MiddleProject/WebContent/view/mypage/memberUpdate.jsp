@@ -1,0 +1,505 @@
+<%@page import="kr.or.ddit.member.vo.MemberVO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<%
+	MemberVO vo=(MemberVO)session.getAttribute("loginMember");
+	String loginInfo = vo != null ? vo.getUser_name() : null;
+%>
+
+
+<meta charset="UTF-8">
+<title>마이페이지 : 회원정보 수정</title>
+	<link rel="stylesheet" href="<%=request.getContextPath() %>/css/common.css">
+	<link rel="stylesheet" href="<%=request.getContextPath() %>/css/index.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/mypage.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/update.css">
+    
+    <!-- 파비콘 -->
+<!--     <link rel="icon" href="#"> -->
+    
+    <!-- 웹폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,
+    900&display=swap&subset=korean" rel="stylesheet">
+   
+    <script src="<%=request.getContextPath() %>/js/jquery-3.7.0.min.js"></script>
+    <script src="<%=request.getContextPath() %>/js/jquery.bxslider.min.js"></script>
+    <script src="<%=request.getContextPath() %>/js/tab.js"></script>
+    <script src="<%=request.getContextPath() %>/js/common.js"></script>
+    <script src="<%=request.getContextPath() %>/js/join.js"></script>
+    
+    <script src="<%=request.getContextPath() %>/js/jquery.serializejson.min.js"></script> 
+    
+    <script>
+ 	// html와 script가 로드되는 시점에서 발생 - 핸드폰번호 (-) 자동삽입
+	document.addEventListener('DOMContentLoaded', function () {
+		 document.getElementById("user_phone").addEventListener("keyup", function(event) {
+	            inputPhoneNumber(event.target);
+	      });
+      
+    });
+ 	
+	// 로그인 여부 확인 및 버튼 표시/숨김 업데이트 함수
+    function updateButtonDisplay() {
+        var loginButton = document.getElementById("loginButton");
+        var logoutButton = document.getElementById("logoutButton");
+        var joinUsButton = document.getElementById("joinUsButton"); 
+        
+        var loginMember = "<%=loginInfo%>";
+
+        if (loginMember == null || loginMember =="null") {
+            loginButton.style.display = "block";
+            joinUsButton.style.display = "block";
+            logoutButton.style.display = "none";
+        } else {
+           /* loginButton.style.display = "none";*/
+           /* joinUsButton.style.display = "none";*/
+            logoutButton.style.display = "block";
+        }
+    } //updateButtonDisplay() 종료
+
+    // 페이지 로드 시 버튼 표시/숨김 업데이트 호출
+    window.onload = function() {
+        updateButtonDisplay();
+    }; 
+
+ 	
+    function inputPhoneNumber( phone ) {
+        if( event.keyCode != 8 ) {
+            const regExp = new RegExp( /^[0-9]{2,3}-^[0-9]{3,4}-^[0-9]{4}/g );
+            if( phone.value.replace( regExp, "").length != 0 ) {                
+                if( checkPhoneNumber( phone.value ) == true ) {
+                    let number = phone.value.replace( /[^0-9]/g, "" );
+                    let tel = "";
+                    let seoul = 0;
+                    if( number.substring( 0, 2 ).indexOf( "02" ) == 0 ) {
+                        seoul = 1;
+                        phone.setAttribute("maxlength", "12");
+                        console.log( phone );
+                    } else {
+                        phone.setAttribute("maxlength", "13");
+                    }
+                    if( number.length < ( 4 - seoul) ) {
+                        return number;
+                    } else if( number.length < ( 7 - seoul ) ) {
+                        tel += number.substr( 0, (3 - seoul ) );
+                        tel += "-";
+                        tel += number.substr( 3 - seoul );
+                    } else if(number.length < ( 11 - seoul ) ) {
+                        tel += number.substr( 0, ( 3 - seoul ) );
+                        tel += "-";
+                        tel += number.substr( ( 3 - seoul ), 3 );
+                        tel += "-";
+                        tel += number.substr( 6 - seoul );
+                    } else {
+                        tel += number.substr( 0, ( 3 - seoul ) );
+                        tel += "-";
+                        tel += number.substr( ( 3 - seoul), 4 );
+                        tel += "-";
+                        tel += number.substr( 7 - seoul );
+                    }
+                    phone.value = tel;
+                } else {
+                    const regExp = new RegExp( /[^0-9|^-]*$/ );
+                    phone.value = phone.value.replace(regExp, "");
+                }
+            }
+        }
+    }// inputPhoneNumber 종료
+
+    function checkPhoneNumber( number ) {
+        const regExp = new RegExp( /^[0-9|-]*$/ );
+        if( regExp.test( number ) == true ) { return true; }
+        else { return false; }
+    }
+    
+    
+    $(function(){  
+ 		// 패스워드 변경 이벤트
+ 		$('#pwCheck').on('click',function(){
+ 			
+ 		   var inputPw = $('#user_pw').val().trim();
+ 		    
+ 			$.ajax({
+ 				url : '<%=request.getContextPath()%>/memberPwCheck.do',
+ 				data : { "user_pw" : inputPw },
+ 				dataType : 'json',
+ 				success : function(result){
+ 					if(result == "OK"){		// PW일치시 출력X
+ 						$("#pwChkResult").html("PW 확인완료");
+ 					} else if(result == "Fail"){	//PW불일치 안내
+ 						$("#pwChkResult").html("PW 불일치");
+ 					}
+ 				},
+ 				error : function(xhr){
+ 					alert("status : "+xhr.status);
+ 				}
+ 				
+ 			});	//ajax닫기 
+ 			
+ 		}); //pw체크 닫기
+ 		
+ 		
+    }) // 패스워드 변경 function종료
+    
+    
+   
+    
+    
+    function updateit() {
+ 		    
+    	if($("#pwChkResult").html()=="PW 확인완료") {
+    		
+    		
+    		let userpw = $("#user_pass").val();     // 새비밀번호
+        	let userpw_re = $("#user_pass2").val(); // 새비밀번호 확인
+     		
+        	if (userpw != userpw_re) {
+            	alert("비밀번호가 일치하지 않습니다. 다시 확인하세요!");
+            	$("#user_pass2").focus();
+            	return false;
+            }
+    		
+    		up_form.submit();
+    		alert("회원 수정이 완료되었습니다.");
+    	} else {
+    		alert("비밀번호 검증을 진행해주세요!");
+    	}
+    	
+    }
+    
+    
+   
+    
+    
+   
+    
+	$(function() {
+	// 1. 탈퇴를 진행하시겠습니까?
+	// 2. 탈퇴를 하시게 되면, 데이터는 절대 복구 불가능합니다.
+	// 회원 탈퇴 버튼 클릭 시
+    	    
+		$("#delete").click(function() {
+			if($("#pwChkResult").html()=="PW 확인완료") {
+			
+				if (confirm("탈퇴를 진행하시겠습니까?") && confirm("탈퇴를 하시게 되면, 데이터는 절대 복구 불가능합니다.")) {
+				
+					$.ajax({
+						url: '<%=request.getContextPath()%>/memberDelete.do',
+						data: { user_id: $('#user_id').val().trim() },
+						method: 'GET', 
+						dataType : 'json',
+						success: function(result) {
+							// 서버 응답 처리
+							if (result === "OK") {
+							alert("회원 탈퇴가 완료되었습니다.");
+							// 삭제된 정보에 대한 처리 
+							window.location.href = '<%=request.getContextPath()%>/view/main/index.jsp'
+							} else if(result == "Fail") {
+							 	alert("회원 탈퇴에 실패하였습니다.");
+							 	
+						 	}
+						},
+						error: function(xhr) {
+							alert("status : "+xhr.status);
+						}
+					}); // ajax종료
+				} //if문 종료
+			
+			} else {
+	    		alert("비밀번호 검증을 진행해주세요!");
+	    	}
+		}); // 회원삭제 종료
+	});
+   
+	document.addEventListener("DOMContentLoaded", function() {
+        var btnGoTop = document.querySelector(".btn-go-top");
+            
+            btnGoTop.addEventListener("click", function(event) {
+                event.preventDefault();
+                
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+
+        	    window.addEventListener("scroll", function() {
+                if (window.scrollY > 0) {
+                    btnGoTop.style.display = "block"; // Show the button
+                } else {
+                    btnGoTop.style.display = "none"; // Hide the button
+                }
+            });
+        });
+
+    
+</script>
+<style type="text/css">
+.quick-area {
+    display: block;
+    text-align: center;
+}
+
+ .btn-go-top {
+     overflow: hidden; 
+   display: block; 
+    width: 40px; 
+    height: 40px; 
+     text-align: center; 
+     line-height: 38px; 
+     font-size: 24px; 
+     border-radius: 50%; 
+     background-color: #fff; 
+    color: #fff; 
+     box-shadow: 1px 1px 7px 0 rgba(0, 0, 0, .5); 
+     text-decoration: none; 
+     transition: opacity 0.3s ease-in-out;  
+ } 
+
+ .quick-area { 
+    opacity: 1; 
+    pointer-events: auto; 
+    transition: opacity 0.4s; 
+ } 
+
+ .btn-go-top img {
+ 	margin-top:10px; 
+     width: 12px; 
+     height: 21px; 
+ } 
+
+</style>
+    
+</head>
+<body>
+<div id="skip">
+        <a href="#gnb">주메뉴 바로가기</a>
+        <a href="#content2">본문바로가기</a>
+    </div>
+
+    <header id="header">
+        <div id="header_wrap">
+            <h1 class="logo fl_left">
+                <a href="<%=request.getContextPath() %>/view/main/index.jsp">
+                    <img src="<%=request.getContextPath() %>/images/2U4U로고.jpg" alt="2U4UCINEMA로고">
+                </a>
+            </h1>
+            <div id="header_btn">
+                <ul class="fl_right">
+                <%
+                if (loginInfo == null || loginInfo.equals("null")) {
+                %>
+                    <li class="fl_left"><a href="<%=request.getContextPath()%>/login.do">로그인</a></li>
+                    <li class="fl_left"><a href="<%=request.getContextPath()%>/view/member/agree.jsp">회원가입</a></li>
+                <%
+                } else {
+                
+                %>	
+                	<li class="fl_left"><a id="logoutButton" href="<%=request.getContextPath()%>/logout.do">로그아웃</a></li>
+                	<li class="fl_left"><a href="#">마이페이지</a></li> 
+                 <%
+                }
+                
+                %>		
+                    <li class="fl_left">
+					<a href="<%=request.getContextPath()%>/boardList.do">고객센터</a></li>
+                </ul>
+            </div>
+            <nav id="gnb" class="txt_cen cle_both:after">
+               <ul>
+                     <li class="nav_Menu"><a href="<%=request.getContextPath() %>/theatermvc/theaterRequest.jsp">예매</a></li>
+                    <li class="nav_Menu"><a href="<%=request.getContextPath() %>/movieListMain.do">영화</a></li>
+                    <li class="nav_Menu"><a href="<%=request.getContextPath() %>/view/cinema/cinema.jsp">영화관</a></li>
+                    <li class="nav_Menu"><a href="<%=request.getContextPath() %>/feedList.do">커뮤니티</a></li> 
+                   <%
+                   System.out.print(request.getContextPath()); %>
+                </ul>
+            </nav>
+        </div>
+	</header>
+
+<section>
+
+    <div id="container">
+        <div id="menu">
+        <ul id="menu_bar">
+            <li class="mainmenu">결제내역</li>
+            <li class="submenu">
+            <a href="<%=request.getContextPath() %>/view/mypage/ticketing.jsp">예매내역</a>
+            </li>
+            <li class="submenu">
+            <a href="<%=request.getContextPath() %>/view/mypage/cancel.jsp">취소내역</a>
+            </li>
+            
+            <li class="mainmenu">나의 무비스토리</li>
+            <li class="submenu">
+            <a href="<%=request.getContextPath() %>/view/mypage/movieLog.jsp">내가본영화</a>
+            </li>
+            
+            <li class="mainmenu">문의내역</li>
+            <li class="submenu">
+            <a href="<%=request.getContextPath() %>/QuestionList.do?user_id=<%=vo.getUser_id()%>">1:1문의내역</a></li>
+            <li class="submenu">
+            <a href="<%=request.getContextPath()%>/lostBoardList.do?user_id=<%=vo.getUser_id()%>">분실물문의내역</a>
+            </li>
+            
+            <li class="mainmenu">나의정보</li>
+            <li class="submenu">
+            <a href="<%=request.getContextPath() %>/view/mypage/memberUpdate.jsp">개인정보수정</a>
+            </li>
+        </ul>
+        </div> <!--사이드 menu 닫기 -->
+    
+        <div id="contents">
+            <div id="update_tit">
+                <form name="up_form" method="post" id="up_form" action="<%=request.getContextPath() %>/memberUpdate.do">
+                    <h2>개인정보 수정</h2>
+                    
+                    
+                    <div id="update_main">
+                    
+                        <table>
+                            <tbody id="update">
+                                <tr class="tr1">
+                                    <th id="update_uid" scope="row">
+                                        <label for="uid">아이디</label>
+                                    </th>
+                                    <td headers="up_uid" colspan="3" >
+                                        <%=vo.getUser_id() %>
+	                                    <input type="hidden" id="user_id" name="user_id" value=<%=vo.getUser_id() %>>
+                                    </td>
+                                </tr>
+
+                                <tr class="tr2">
+                                    <th id="update_name" scope="row">
+                                        <label for="uname">이름</label>
+                                    </th>
+                                    <td headers="up_uname" colspan="3" >
+                                    <input type="text" id="user_name" name="user_name" value=<%=vo.getUser_name() %>>
+                                    </td>
+                                </tr>                     
+                            </tbody>
+                        </table>
+                            
+                        <table id="update_menu">
+                            <tbody id="update">
+                                <tr class="tr1">
+                                    <th id="join_uid" scope="row">
+                                        <label for="uid">현재 비밀번호</label>
+                                    </th>
+                                        <td headers="join_uid" colspan="3">
+                                        <input type="password" id="user_pw" name="user_pw" maxlength="12">
+                                        <button type="button" id="pwCheck">확인</button>
+                                    	<span id="pwChkResult"></span>
+                                    	<p class="jo_fz">회원정보 변경 및 탈퇴시 비밀번호 검증은 필수사항이오니, 반드시 진행바랍니다.</p>
+                                    </td>
+                                </tr>
+                                                        
+                                <tr class="tr2">
+                                    <th scope="row">
+                                        <label for="upw">새 비밀번호</label>
+                                    </th>
+                                    <td>
+                                        <input type="password" id="user_pass" name="user_pass" minlength="6" maxlength="12">
+                                        <p class="jo_fz">영어와 숫자로 6~12글자를 통해 구성해주세요.</p>
+                                    </td>
+                                </tr>
+                                                            
+                                <tr class="tr3">                                 
+                                    <th scope="row">
+                                        <label for="upwchk">새 비밀번호 확인</label>
+                                    </th>
+                                    <td>
+                                        <input type="password" id="user_pass2" name="user_pass2" minlength="6" maxlength="12">
+                                        <!--
+                                        <button type="button" id="pwCheck">변경</button>
+                                    	 -->
+                                    </td>
+                                </tr>
+                                
+                                <tr class="tr4">                       
+                                    <th scope="row">
+                                    <label for="unumber1">연락처</label>
+                                    </th>
+                                    <td>                           
+                                        <input type="text" id="user_phone" name="user_phone" maxlength="13" value=<%=vo.getUser_phone() %>>
+                                    </td>           
+                                </tr>
+
+                                <tr class="tr5">
+                                    <th scope="row">
+                                        <label for="uemail">이메일</label>
+                                    </th>
+                                    <td scope="row">
+                                        <input type="text" id="user_mail" name="user_mail" value=<%=vo.getUser_mail() %>>
+                                    
+                                        <!-- //시간남으면 이메일 인증 진행  
+                                        <button type="button" onclick="sendVerificationEmail()" class="boder_bx">본인인증</button>
+                                                                        
+                                        <input type="text" id="mailCheck" placeholder="인증번호 입력"	autocomplete="off">
+                                        <button type="button" id="mailCheckButton">인증</button>
+                                        -->   
+                                    
+                                    </td>
+                                </tr>
+                            </tbody>
+                                <tr class="update_member">
+                                    <th colspan="2">
+                                    	<button type="button" onclick="updateit()" id="update">수정</button>
+                                        <button type="reset" onclick="location.href='<%=request.getContextPath()%>/view/main/index.jsp'">취소</button>
+                                    </th>
+                                </tr>
+                        </table>
+                    </div><!--update_main 종료 -->
+                </form><!--update_form 종료 -->
+            </div><!--update_tit 종료 --> 
+            <p class="final_btn">
+                <button type="button" class="wbtn" id="delete">회원탈퇴</button>
+            </p>
+        </div><!-- contents 종료-->
+    </div><!--container 종료-->
+
+ </section> <!-- section 닫기 --> 
+   <div class="wid1920">
+        <footer id="footer">
+            <div class="footerbox">
+                <h1 class="logo">
+                    <a href="index.html">
+                        <img src="<%=request.getContextPath() %>/images/2U4U로고.jpg" alt="2U4U시네마 로고" style="width:180px;">
+                    </a>
+                </h1>
+                <br>
+                <ul class="cle_both">
+                    <li>이용약관</li>
+                    <li>채용정보</li>
+                    <li>회사소개</li>
+                    <li><a href="#">고객센터</a></li>
+                    <li>제휴/광고/임대문의</li>
+                    <li>개인정보처리방침</li>
+                </ul>
+                <address>
+                    대전광역시 중구 오류동 2U4U CINEMA
+                </address>
+                <p>
+            PL 송석원 &nbsp;DA 전수진 &nbsp;TA 신범종 &nbsp;AA 이수정 &nbsp;UA 박주연<br>
+                    사업자 등록번호 111-22-33333 통신판매업신고번호 제 000호
+                </p>
+                <div class="footer_txt">
+                    <strong>고객센터<br>1588 - 5555</strong>
+                    <p class="copyR">
+                        COPYRIGHT &copy; 2U4U CINEMA ALL RIGHT RESERVED.
+                    </p>
+                </div>
+            </div>
+        </footer>
+       </div>
+       <div class="quick-area" style="display: block; position: fixed; bottom: 20px; right: 7%;">
+    	<a href="#" class="btn-go-top" title="top">
+    		<img src="https://img.cgv.co.kr/R2014/images/common/btn/gotoTop.png" alt="최상단으로 이동">
+    	</a>
+    	</div>
+	</body>
+</html>

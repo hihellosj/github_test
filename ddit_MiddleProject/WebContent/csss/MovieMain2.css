@@ -1,0 +1,702 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    font-family: 'Noto Sans KR', 'CJONLYONENEW', '맑은 고딕', '돋움', Dotum, sans-serif;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    word-break: break-all;
+}
+
+.container {
+    width: 100%;
+    min-height: 100%;
+    margin: -92px 0 -200px 0;
+    padding: 92px 0 300px 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+}
+
+#contents {
+    width: 100%;
+    margin: 0;
+    padding: 40px 0 0 0;
+}
+
+.inner-wrap {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.inner-wrap:after, .inner-wrap:before {
+    content: '';
+    display: table;
+}
+
+ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tit-heading-wrap {
+    position: relative;
+    height: 80px;
+    padding-top: 30px;
+    border-bottom: 3px solid #241d1e;
+}
+
+.tit-heading-wrap > h3 {
+    display: inline-block;
+    position: relative;
+    height: inherit;
+    margin: 0;
+    background-image: none;
+    color: #222;
+    font-weight: 500;
+    font-size: 28px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+h3 {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.tit-heading-wrap > .submenu {
+    position: absolute;
+    top: 45px;
+    right: 0;
+}
+
+.tit-heading-wrap > .submenu > ul {
+    overflow: hidden;
+}
+
+.tit-heading-wrap > .submenu > ul > li:first-child {
+    margin-left: 0;
+}
+
+.tit-heading-wrap > .submenu > ul > li {
+    float: left;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.tit-heading-wrap > .submenu > ul > li.on > a, .tit-heading-wrap > .submenu > ul > li > a:hover, .tit-heading-wrap > .submenu > ul > li > a:focus {
+    background: url(https://img.cgv.co.kr/r2014/images/common/ico/ico_arrow07.png) no-repeat 0 1px;
+    color: #000;
+    font-weight: bold; 
+}
+
+.tit-heading-wrap > .submenu > ul > li > a {
+    display: inline-block;
+    padding-left: 13px;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:-webkit-any-link {
+    cursor: pointer;
+}
+
+.tit-heading-wrap > .submenu > ul > li {
+    float: left;
+    margin-left: 15px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+div[class^="sect-"] {
+    clear: both;
+    zoom: 1;
+}
+
+.sect-sorting {
+    position: relative;
+    margin-top: -10px;
+    text-align: right;
+}
+
+.sect-sorting .nowshow {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+body, input, textarea, select, button, table {
+    font-size: 13px;
+    line-height: 1.2;
+    color: #666;
+    font-family: 'Noto Sans KR', 'CJONLYONENEW', '맑은 고딕', '돋움', Dotum, sans-serif;
+    font-weight: 400;
+}
+
+input, select, img {
+    vertical-align: middle;
+}
+
+button, input {
+    overflow: visible;
+}
+
+input:not([type="range"]):not([type="color"]) {
+    writing-mode: horizontal-tb !important;
+}
+
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+}
+
+label {
+    cursor: default;
+}
+
+.hidden {
+    font: 0/0 a;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+    zoom: 1;
+}
+
+.sect-sorting > select {
+    padding: 3px 5px;
+    margin-top: -5px;
+}
+
+select {
+    line-height: 27px;
+    height: 29px;
+    border: 1px solid #b4b3aa;
+}
+
+input, select, img {
+    vertical-align: middle;
+}
+
+select:not(:-internal-list-box) {
+    overflow: visible !important;
+}
+
+.sect-sorting > select option {
+    height: 23px;
+    line-height: 23px;
+}
+
+option {
+    font-weight: normal;
+    display: block;
+    white-space-collapse: collapse;
+    text-wrap: nowrap;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+
+.movie-list {
+    letter-spacing: 0;
+    margin-top: 70px;
+}
+
+.movie-list ol {
+    margin-left: -60px;
+}
+
+.movie-list ol:after, .movie-list ol:before {
+    content: '';
+    display: table;
+}
+
+.movie-list ol li {
+    overflow: hidden;
+    position: relative;
+    float: left;
+    width: 230px;
+    height: 450px;
+    margin: 0 0 0 60px;
+    padding: 0;
+    background-color: #fff;
+}
+
+.movie-list ol li .movie-list-info {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    height: 331px;
+    text-decoration: none;
+    background-color: #f5f5f5;
+}
+
+.movie-list ol li .movie-list-info img.poster {
+    width: 230px;
+    height: 331px;
+}
+
+img {
+    border: 0;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    border-radius: 5px;
+}
+
+.movie-list ol li .tit-area {
+    position: relative;
+    width: 100%;
+    margin: 15px 0 0 0;
+    padding: 0 0 0 30px;
+    line-height: 25px;
+}
+
+.movie-list p {
+    margin: 0;
+    padding: 0;
+}
+
+.movie-list ol li .tit-area .movie-grade {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -10px;
+}
+
+.movie-grade age-15 {
+    overflow: hidden;
+    width: 23px;
+    height: 23px;
+    display: inline-block;
+    text-indent: -9999px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.movie-list ol li {
+    margin: 25px 0 0 60px; 
+}
+
+.movie-list ol li .tit-area .tit {
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 2px 0 0 1px;
+    font-size: 1.3333em;
+    font-weight: 600;
+}
+
+.movie-list ol li .rate-date {
+    overflow: hidden;
+    padding: 10px 0 0 0;
+}
+
+.movie-list ol li .rate-date span.rate {
+    margin: 0 7px 0 0;
+    padding: 0 8px 0 0;
+}
+
+.movie-list ol li .rate-date span {
+    display: block;
+    position: relative;
+    float: left;
+}
+
+.movie-list ol li .rate-date span.rate:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 1px;
+    height: 12px;
+    margin: -6px 0 0 0;
+    background-color: #d8d9db;
+}
+
+.movie-list ol li .rate-date span {
+    display: block;
+    position: relative;
+    float: left;
+}
+
+.movie-list ol li .btn-util {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 36px;
+}
+
+.movie-list ol li .btn-util .btn-like {
+    float: left;
+    width: 72px;
+    margin: 0;
+    padding: 0 5px;
+    font-size: .8667em;
+    border-color: #ebebeb;
+}
+
+.button {
+    display: inline-block;
+    height: 36px;
+    text-align: center;
+    line-height: 34px;
+    color: #503396;
+    font-weight: 400;
+    border-radius: 4px;
+    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
+    text-decoration: none;
+    border: 1px solid #503396;
+    vertical-align: middle;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+[type=button], [type=reset], [type=submit], button {
+    -webkit-appearance: button;
+}
+
+button {
+    letter-spacing: -.5px;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button, input {
+    overflow: visible;
+}
+
+.button>i:first-child {
+    margin-left: 0;
+    margin-right: 4px;
+}
+
+.button>i {
+    margin-top: -2px;
+}
+
+.ico-heart-toggle-gray {
+    width: 17px;
+    height: 15px;
+	background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-heart-toggle-gray.png); 
+}
+
+.iconset {
+    overflow: hidden;
+    display: inline-block;
+    margin: -1px 0 0 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: middle;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+i {
+    font-style: italic;
+}
+
+.sect-sorting .movie-search {
+    position: relative;
+    float: right;
+    width: 230px;
+    height: 36px;
+    margin: 0;
+    padding: 0 31px 0 0;
+    border: 1px solid #d8d9db;
+    border-radius: 3px;
+}
+
+.sect-sorting .movie-search .input-text {
+    display: block;
+    width: 100%;
+    height: 34px;
+    border: 0;
+}
+
+.input-text {
+    padding: 0 10px;
+    line-height: 30px;
+    color: #444;
+    vertical-align: middle;
+    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
+}
+
+button, input {
+    overflow: visible;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-size: 1em;
+}
+
+input:not([type="range"]):not([type="color"]) {
+    writing-mode: horizontal-tb !important;
+}
+
+input:not([type="file" i], [type="image" i], [type="checkbox" i], [type="radio" i]) {
+}
+
+.movie-search .btn-search-input {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+}
+
+input {
+    font-style: ;
+    font-variant-ligatures: ;
+    font-variant-caps: ;
+    font-variant-numeric: ;
+    font-variant-east-asian: ;
+    font-variant-alternates: ;
+    font-weight: ;
+    font-stretch: ;
+    font-optical-sizing: ;
+    font-kerning: ;
+    font-feature-settings: ;
+    font-variation-settings: ;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    background-color: field;
+}
+
+.sect-sorting button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+.btn-search-input {
+    overflow: hidden;
+    width: 30px;
+    height: 32px;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+    background: #fff url(https://img.megabox.co.kr/static/pc/images/common/btn/btn-search-input.png) no-repeat center;
+}
+
+.movie-list ol li .btn-util .case {
+    float: left;
+    width: 153px;
+    margin-left: 5px;
+}
+
+.movie-list ol li .btn-util .case.col-2 .button:first-child {
+    margin-left: 0;
+}
+
+.movie-list ol li .btn-util .case.col-2 .button {
+    width: 74px;
+}
+
+.movie-list ol li .btn-util .case .button {
+    display: block;	
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+.button.purple {
+    color: #fff;
+    line-height: 36px;
+    border: 0;
+    background: #700ff0;
+    width: 50px;
+}
+
+a.button {
+    text-decoration: none;
+}
+
+.movie-list ol li .btn-util .case.col-2 .button.img img {
+    display: inline-block;
+    padding-top: 7px;
+}
+
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+.movie-list ol li .btn-util .case.col-2 .button {
+    width: 74px;
+    margin-left: 5px;
+}
+
+.button {
+    height: 36px;
+    text-align: center;
+    font-weight: 400;
+    border-radius: 4px;
+    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.movie-list ol li .btn-util .case .button {
+    display: block;
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.ranking-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+/*     font-size: 2.3em; */
+    font-size: 26px;
+    font-style: italic;
+/*     font-family: Roboto,Dotum,'돋움',sans-serif; */
+    font-weight: 550;
+    font-family: 'Roboto', "Noto Sans KR";
+    padding: 4px 8px;
+    border-radius: 6px 2px 0 4px;
+    text-shadow: 2px 2px 2px rgba(0,0,0,.8);
+}
+
+.quick-area {
+    display: block;
+    text-align: center;
+}
+
+.btn-go-top {
+    overflow: hidden;
+    display: block;
+    width: 40px;
+    height: 40px; /* Set a fixed height for the button */
+    text-align: center;
+    line-height: 38px;
+    font-size: 24px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #fff;
+    box-shadow: 1px 1px 7px 0 rgba(0, 0, 0, .5);
+    text-decoration: none;
+    transition: opacity 0.3s ease-in-out; /* Add a smooth opacity transition */
+}
+
+.quick-area {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.4s;
+}
+
+.btn-go-top img {
+    width: 12px;
+    height: 21px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:-webkit-any-link {
+    cursor: pointer;
+}
+
+.movie-sorting {
+    float: left;
+    padding: 5px 0 0 0;
+}
+
+.movie-sorting span:first-child {
+    margin-left: 0;
+}
+
+.movie-sorting span {
+    display: block;
+    position: relative;
+    float: left;
+    margin: 0 10px;
+}
+
+.movie-sorting span .btn.on {
+    color: #222;
+    font-weight: 700;
+}
+
+
+button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+.movie-sorting span:before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    display: block;
+    width: 1px;
+    height: 12px;
+    margin: -6px 0 0 0;
+    background-color: #d8d9db;
+}
+
+.movie-sorting span .btn {
+    display: inline-block;
+    color: #666;
+    cursor: pointer;
+    padding: 5px;
+    border: none; /* 변경: 버튼 스타일에 불필요한 경계 제거 */
+    background: none; /* 변경: 배경색 제거 */
+    font-weight: normal; /* 변경: 버튼 텍스트 기본 글꼴 굵기로 변경 */
+    transition: color 0.2s; /* 변경: 색상 변화 시 부드럽게 전환 */
+}
+
+.sect-sorting .sortTab {
+    float: left; 
+    margin-top: 0px; 
+    margin-left: 10px; 
+  }
