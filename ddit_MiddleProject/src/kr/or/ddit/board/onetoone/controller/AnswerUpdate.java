@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import kr.or.ddit.board.onetoone.service.IQnAboardService;
 import kr.or.ddit.board.onetoone.service.QnAboardServiceImpl;
 import kr.or.ddit.board.onetoone.vo.QnAboardVO;
-
+//깃테스트
 @WebServlet("/AnswerUpdate.do")
 public class AnswerUpdate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
